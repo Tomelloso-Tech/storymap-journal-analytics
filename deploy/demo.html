@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+      <style>
+        html, 
+        body {
+          height: 100%;
+        }
+        iframe {
+          width: 49%;
+          height: 100%;
+          display: inline-block;
+        }
+        #maptiks-map {
+          width: 49%;
+          height: 95%;
+          top: 5px;
+          display: inline-block;
+        }
+        #div-dev-txt {
+          position: absolute;
+          width: 49%;
+          height: 5%;
+          top: 0px;
+          text-align: center;              
+        }
+        #dev-span {
+          font-size: 2.2vh;
+          font-family: Lucida Grande;
+          vertical-align: middle;
+        }
+        .leaflet-popup-content pre {
+          white-space: pre-wrap;       /* Since CSS 2.1 */
+          white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+          white-space: -pre-wrap;      /* Opera 4-6 */
+          white-space: -o-pre-wrap;    /* Opera 7 */
+          word-wrap: break-word;       /* Internet Explorer 5.5+ */
+        }
+      </style>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+      <!-- Load Esri Leaflet from CDN -->
+      <script src="https://unpkg.com/esri-leaflet@2.0.8"></script>
+      <script data-dojo-config="async: 1" src="//ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js"></script>
+    </head>
+    <body>
+        <div id="maps-container" style="width:100%; height:100%;">
+          <div id="div-dev-txt">
+            <span id="dev-span">
+            <u>Developer Console</u><br>See Maptiks Code in Action!</span>
+          </div>
+          <div id="maptiks-map"> </div>
+        </div>
+        <script>
+          var iframe = document.createElement('iframe');
+          iframe.onload = function() {
+            require(["dojo/topic"],
+              function(topic){
+                var win = iframe.contentWindow || iframe;
+                var Lmap = L.map("maptiks-map");
+                win.dojo.subscribe("maptiks-ready", function(mapWrapper, response, secTitle){
+                  curMap = win.app.maps[response.id].response.map;
+                  var id = "journalDemo:" + secTitle; // default id
+                  if (!curMap.maptiks) {
+                    var container = curMap.container; // the current map div
+                    var maptiksMapOptions = {
+                      maptiks_trackcode: "c311cf16-ad79-42b1-97f9-f433be6c8b00", // default trackcode
+                      maptiks_id: id
+                    };
+                    mapWrapper(container, maptiksMapOptions, curMap);
+                  } else {
+                    curMap.maptiks['_id'] = id;
+                  }
+                  
+                  var esriExtent = win.app.map.geographicExtent;
+                  var leafletExtent = L.latLngBounds([L.latLng(esriExtent.ymin, esriExtent.xmin),L.latLng(esriExtent.ymax, esriExtent.xmax)]);
+
+                  Lmap.fitBounds(leafletExtent);
+
+                  L.esri.basemapLayer("Gray").addTo(Lmap);
+
+                  win.app.map.maptiks.off("maptiks:track");
+                  win.app.map.maptiks.on("maptiks:track", function (e) {
+                    var position = e.hasOwnProperty("position") ? [e.position[1], e.position[0]] : [e.map_center[1], e.map_center[0]];
+
+                    var marker = L.marker(position).addTo(Lmap);
+                    var contentString = '<div id="content">'+
+                      "<h1>" + e.action + "</h1><br>" +
+                      "<pre>" + JSON.stringify(e, null, 2) + "</pre>" + "</div>";
+                    marker.bindPopup(contentString).openPopup();
+                  });
+                });
+              }
+            )
+          }
+          iframe.src = "index.html" + window.location.search; 
+          document.getElementById("maps-container").appendChild(iframe);
+        </script>
+    </body>
+</html>
