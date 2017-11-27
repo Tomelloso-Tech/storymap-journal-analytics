@@ -15,7 +15,7 @@ define(["lib-build/tpl!./BuilderView",
 		"storymaps/common/builder/settings/ViewTheme",
 		"storymaps/common/builder/settings/ViewHeader",
 		"./settings/ViewLayoutFonts",
-        "./settings/ViewMaptiks",
+        "./settings/ViewAnalytics",
 		// Template
 		"storymaps/common/builder/media/MediaSelector",
 		"./addedit/Popup",
@@ -46,7 +46,7 @@ define(["lib-build/tpl!./BuilderView",
 		ViewTheme,
 		ViewHeader,
 		ViewLayoutFonts,
-        ViewMaptiks,
+        ViewAnalytics,
 		// Template
 		MediaSelector,
 		AddEditPopup,
@@ -397,7 +397,7 @@ define(["lib-build/tpl!./BuilderView",
 					new ViewTheme(),
 					new ViewLayoutFonts(),
 					new ViewHeader(),
-                    new ViewMaptiks()
+                    new ViewAnalytics()
 				];
 			};
 
@@ -414,7 +414,7 @@ define(["lib-build/tpl!./BuilderView",
 						},
 						WebApplicationData.getTheme(),
 						WebApplicationData.getHeader(),
-                        WebApplicationData.getMaptiks()
+                        WebApplicationData.getAnalytics()
 					],
 					null
 				);
@@ -441,7 +441,7 @@ define(["lib-build/tpl!./BuilderView",
 					fonts: data.settings[3].fonts
 				});
 				WebApplicationData.setHeader(data.settings[4]);
-                WebApplicationData.setMaptiks(data.settings[5]);
+                WebApplicationData.setAnalytics(data.settings[5]);
 
 				// TODO deprecate nbChange ...
 				if ( nbChange ) {

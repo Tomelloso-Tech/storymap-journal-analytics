@@ -1,5 +1,5 @@
 define([
-        "./Maptiks", // import Maptiks code
+        "./Analytics", // import Maptiks code
         "lib-build/css!./MainView",
 		"../ui/MainStage",
 		"./Config",
@@ -72,7 +72,7 @@ define([
 			this.init = function(core)
 			{
 				_core = core;
-              
+
 				//----------------------------------------------
 				// Development - TODO to be removed for release
 				//----------------------------------------------

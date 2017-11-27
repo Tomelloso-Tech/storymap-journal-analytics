@@ -1,10 +1,10 @@
-define(["lib-build/tpl!./ViewMaptiks",
-		"lib-build/css!./ViewMaptiks"
+define(["lib-build/tpl!./ViewAnalytics",
+		"lib-build/css!./ViewAnalytics"
 	],
 	function (
 		viewTpl
 	){
-		return function ViewMaptiks()
+		return function ViewAnalytics()
 		{
 			var	_titleContainer = null,
 				_contentContainer = null,
@@ -21,30 +21,32 @@ define(["lib-build/tpl!./ViewMaptiks",
 				}));
 			};
 
-            this.present = function(settings) 
-			{	
+            this.present = function(settings)
+			{
 				settings = settings || {};
+                _contentContainer.find("#ga-trackcode").prop("value", settings.gaTrackcode);
                 _contentContainer.find("#maptiks-trackcode").prop("value", settings.maptiksTrackcode);
                 _contentContainer.find("#maptiks-id").prop("value", settings.maptiksId);
 				_settings = settings;
 			};
-			
+
 			this.show = function()
 			{
 				//
 			};
 
             this.save = function()
-			{			
+			{
 				return {
+                    gaTrackcode: _contentContainer.find("#ga-trackcode").prop("value"),
 					maptiksTrackcode: _contentContainer.find("#maptiks-trackcode").prop("value"),
                     maptiksId: _contentContainer.find("#maptiks-id").prop("value")
 				};
 			};
-          
+
 			this.initLocalization = function()
 			{
-				_titleContainer.html('Maptiks');
+				_titleContainer.html('Analytics');
 			};
 		};
 	}

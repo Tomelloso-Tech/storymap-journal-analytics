@@ -12,6 +12,10 @@ define(["dojo/topic"], function(topic) {
 
   // The application is ready
   topic.subscribe("tpl-ready", function(){
+    var gaTrackcode = app.data.getWebAppData().getAnalytics().gaTrackcode
+	ga('create', gaTrackcode, 'auto');
+	ga('send', 'pageview');
+
     /*
     * Custom Javascript to be executed when the application is ready goes here
     */

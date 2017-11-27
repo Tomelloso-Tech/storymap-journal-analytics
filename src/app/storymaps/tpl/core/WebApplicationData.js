@@ -382,11 +382,11 @@ define(["dojo/_base/lang", 'storymaps/tpl/core/Helper'],
 				_data.values.story.sections = sections;
 				_data.values.story.reversed = reversed;
 			},
-            getMaptiks: function ()
+            getAnalytics: function ()
             {
                 return this.getSettings().maptiks || {};
             },
-            setMaptiks: function (data)
+            setAnalytics: function (data)
             {
                 _data.values.settings = _data.values.settings || {};
 				_data.values.settings.maptiks = data;
