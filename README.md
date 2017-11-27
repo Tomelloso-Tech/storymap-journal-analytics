@@ -8,6 +8,7 @@ several ways to track your traffic.
 Commands:
 
 * Developer mode: `grunt server`
+    * Open:  `http://localhost:8080/src/?appid=d2134b4665df4fdea6077a9255315484`
 * Deploy new version: `grunt`
 
 ## Using Maptiks
