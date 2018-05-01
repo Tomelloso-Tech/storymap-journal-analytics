@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "Cerrar"
+      "close": "Cerrar",
+      "focusMainstage": "Activar el teclado para el contenido multimedia",
+      "expandImage": "Expandir imagen"
+    },
+    "a11y": {
+      "skipToContent": "Saltar a narración",
+      "headerAria": "Encabezado de la historia",
+      "panelAria": "Narración de la historia",
+      "mainStageAria": "Contenido multimedia de la sección actual de la historia",
+      "logoLinkAria": "Vínculo del logotipo",
+      "toTop": "Ir al comienzo de la narración",
+      "focusContent": "Volver a narración",
+      "navAria": "Secciones de la historia",
+      "navPreviousAria": "Sección anterior",
+      "navNextAria": "Sección siguiente",
+      "toSectionAria": "Ir a la sección %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Siguiente grupo de secciones (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Anterior grupo de secciones (%SECTION_RANGE%)",
+      "loadingAria": "El contenido de la historia se está cargando"
     },
     "loading": {
       "step1": "Cargando historia",
@@ -63,7 +81,7 @@ define({
       "errorNotPublished": "Este vínculo no está activo (no se publica la sección)"
     },
     "headerFromCommon": {
-      "storymapsText": "Un mapa de historias",
+      "storymapsText": "Un story map",
       "builderButton": "Editar",
       "facebookTooltip": "Compartir en Facebook",
       "twitterTooltip": "Compartir en Twitter",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Esto no está disponible en el modo de reproducción automática",
       "notshared": "No se ha compartido la historia"
     },
-    "overviewFromCommon": {
-      "title": "Mapa de vista general"
-    },
-    "legendFromCommon": {
-      "title": "Leyenda"
+    "mapFromCommon": {
+      "overview": "Mapa de vista general",
+      "legend": "Leyenda",
+      "home": "Zoom Inicio"
     },
     "shareFromCommon": {
       "copy": "Copiar",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "Cuando este modo está activado, hay disponibles controles para reproducir o detener la historia y para ajustar la velocidad de navegación.",
       "linksupdated": "Vínculos actualizados",
       "print": "Imprimir",
-      "printInstruction1": "Espere a que se cargue todo el contenido antes de imprimir esta página",
-      "printInstruction1a": "Puede que parte del contenido no se imprima a menos que habilite \"Imprimir colores e imágenes de fondo\" en el cuadro de diálogo de configuración de Imprimir página",
+      "printInstruction1": "Espere a que se cargue toda la historia antes de imprimir",
+      "printInstruction1a": "Si esta página se carga lentamente o algún contenido multimedia no aparece, pruebe a imprimir un rango menor de secciones.",
+      "printInstruction1b": "Para obtener resultados óptimos, puede que tenga que habilitar la impresión de elementos de fondo en los ajustes de impresión de su navegador.",
       "printInstruction2": "Esta página no se puede compartir con otros, en su lugar comparta ${link}",
       "link": "vínculo a la historia",
+      "optionsHeader": "Opciones",
       "printOptPageBreak": "Empezar cada sección en una página nueva",
       "makeTextBlack": "Configurar todo el texto en color negro",
-      "printWarning": "Esta es una versión impresa de un story map. El contenido dinámico, como vídeos y mapas interactivos, solo está disponible en la versión en línea en ${link}",
+      "showLinks": "Mostrar las URL del vínculo",
+      "madeWith": "Esta historia se ha creado con ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Story Map Journal de Esri",
+      "readItOnline": "Leer la versión interactiva en la web, en ${link}.",
       "printMSWarning": "vínculo solo disponible en la historia en línea",
-      "printVideoWarning": "Este vídeo se puede ver en la versión en línea de este story map"
+      "printVideoWarning": "Este vídeo se puede ver en la versión en línea de este story map",
+      "printRangeHeader": "Imprimir parte de esta historia",
+      "sectionLabel": "Secciones:",
+      "apply": "Solicitar participación",
+      "resetRange": "Restablecer a historia completa"
     }
   }
 });

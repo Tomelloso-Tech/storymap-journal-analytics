@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "Închidere"
+      "close": "Închidere",
+      "focusMainstage": "Transmitere focalizare tastatură către material media",
+      "expandImage": "Extindere imagine"
+    },
+    "a11y": {
+      "skipToContent": "Sari la naraţiune",
+      "headerAria": "Antet poveste",
+      "panelAria": "Naraţiune poveste",
+      "mainStageAria": "Medii secţiune poveste curentă",
+      "logoLinkAria": "Legătură siglă",
+      "toTop": "Mergi la începutul naraţiunii",
+      "focusContent": "Înapoi la naraţiune",
+      "navAria": "Secţiuni poveste",
+      "navPreviousAria": "Secţiunea anterioară",
+      "navNextAria": "Secţiunea următoare",
+      "toSectionAria": "Mergi la secţiunea %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Următorul grup de secţiuni (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Grup anterior de secţiuni (%SECTION_RANGE%)",
+      "loadingAria": "Încărcare conţinut poveste"
     },
     "loading": {
       "step1": "Se încarcă povestea",
@@ -63,7 +81,7 @@ define({
       "errorNotPublished": "Acest link nu este activ (secţiunea nu este publicată)"
     },
     "headerFromCommon": {
-      "storymapsText": "O hartă informativă",
+      "storymapsText": "O Story Map",
       "builderButton": "Editare",
       "facebookTooltip": "Partajare pe Facebook",
       "twitterTooltip": "Partajare pe Twitter",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Aceasta nu este disponibilă în modul de redare automată",
       "notshared": "Scenariul nu este partajat"
     },
-    "overviewFromCommon": {
-      "title": "Hartă de prezentare generală"
-    },
-    "legendFromCommon": {
-      "title": "Legendă"
+    "mapFromCommon": {
+      "overview": "Hartă de prezentare generală",
+      "legend": "Legendă",
+      "home": "Zoom Pagină principală"
     },
     "shareFromCommon": {
       "copy": "Copiere",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "Când acest mod este activ, sunt afişate butoane pentru a reda/întrerupe scenariul şi pentru a regla viteza de navigare.",
       "linksupdated": "Legătură actualizată!",
       "print": "Imprimare",
-      "printInstruction1": "Aşteptaţi să se încarce tot conţinutul înainte de a imprima această pagină",
-      "printInstruction1a": "Unele conţinuturi nu pot fi imprimate decât dacă activaţi opţiunea „Imprimare culori şi imagini de fundal” din caseta de dialog pentru configurare Imprimare pagină",
+      "printInstruction1": "Aşteptaţi ca întreaga poveste să se încarce înainte de imprimare",
+      "printInstruction1a": "Dacă această pagină se încarcă încet sau anumite medii nu apar, încercaţi să imprimați o serie mai mică de secţiuni.",
+      "printInstruction1b": "Pentru rezultate optime, poate fi necesar să activați imprimarea elementelor de fundal în setările de imprimare ale browserului.",
       "printInstruction2": "Această pagină nu poate fi partajată cu alţi utilizatori, partajaţi în schimb linkul ${link}",
       "link": "către scenariu",
+      "optionsHeader": "Opţiuni",
       "printOptPageBreak": "Începeţi fiecare secţiune pe o pagină nouă",
       "makeTextBlack": "Coloraţi tot textul cu negru",
-      "printWarning": "Aceasta este o versiune imprimată a unei hărţi informative. Conţinutul dinamic, cum ar fi videoclipurile şi hărţile interactive, este disponibil doar în versiunea online pe care o puteţi accesa cu linkul ${link}",
+      "showLinks": "Afişaţi URL-uri link",
+      "madeWith": "Această poveste a fost creată cu  ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Jurnal Story Map al Esri",
+      "readItOnline": "Consultaţi versiunea interactivă pe internet la ${link}.",
       "printMSWarning": "disponibil doar în scenariul online",
-      "printVideoWarning": "Acest videoclip poate fi vizualizat în versiunea online a acestei hărţi informative"
+      "printVideoWarning": "Acest videoclip poate fi vizualizat în versiunea online a acestei hărţi informative",
+      "printRangeHeader": "Imprimați o parte din această poveste",
+      "sectionLabel": "Secţiuni:",
+      "apply": "Aplicare",
+      "resetRange": "Resetare la povestea integrală"
     }
   }
 });

@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Web 頁面連結",
       "lblEmbed": "嵌入代碼",
+      "lblMustUseHTTPS": "連結到 Web 內容時必須以 HTTPS 開頭",
       "lblOR": "OR",
       "lblError1": "錯誤，請清除其中一個輸入欄位。",
       "lblError2": "嵌入代碼僅可包含一個 %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "圖片連結",
       "lblURLPH": "連結應以 .jpg、.png、.gif 或 .bmp 結尾",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "此圖像可能無效。請指定圖像文件的直接連結(URL 通常以 .jpg 或 .png 結尾)。包含圖像的網頁連結無法使用。",
+      "lblURLErrorHTTPS": "此圖片連結無效。URL 必須以 HTTPS 開頭，並以支援的圖片檔的副檔名結尾 (.jpg、.png、.gif、.bmp)。",
       "lblURLCheck": "正在檢查圖像...",
       "lblLabel": "圖片標號",
       "lblLabel1": "說明文字",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "適合",
       "lblPosition4": "自動縮放",
       "lblPosition5": "自訂",
-      "lblURLHelp": "為了獲得最佳結果，圖片必須小於 400 KB。請使用 80% 品質的壓縮 JPG 圖片及這些建議的圖片寬度：為主舞台或包含最大化按鈕的敘述面板使用 2000 像素，為不含最大化按鈕的敘述面板使用 1000 像素。<br><br>如果連結的圖片繪製緩慢，會將它上傳到您的故事以獲得更好的結果。",
+      "lblURLHelp": "圖片連結必須以 HTTPS 開頭。<br><br>為了獲得最佳結果，圖片必須小於 400 KB。請使用 80% 品質的壓縮 JPG 圖片及這些建議的圖片寬度：為主舞台或包含最大化按鈕的敘述面板使用 2000 像素，為不含最大化按鈕的敘述面板使用 1000 像素。<br><br>如果連結的圖片繪製緩慢，會將它上傳到您的故事以獲得更好的結果。",
       "tooltipDimension": "可使用 'px' 或 '%' 指定值",
       "tooltipDimension2": "值必須在 'px'中指定",
       "lblPosition2Explain": "（可裁切）",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "讀者定位到其他部分時進行卸載",
       "unloadHelp": "如果網頁中包含音頻或影片介質，請將該選項選中以在讀者定位到其他部分時停止內容播放。取消勾選該選項可使讀者在瀏覽故事的同時持續播放音軌。<br />如果網頁是應用程式，請取消勾選該選項，這樣故事不必在讀者返回此部分時重新載入。",
       "embedProtocolLabel": "透過安全連線 (HTTPS) 載入頁面",
-      "embedProtocolWarning1": "若您的故事未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>瞭解詳細資訊</a>",
-      "embedProtocolWarning2": "若您的故事未載入此網頁，請取消勾選此選項並再試一次。若仍未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。<a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>瞭解詳細資訊</a>"
+      "embedProtocolWarning1": "若您的故事未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "embedProtocolWarning2": "若您的故事未載入此網頁，請取消勾選此選項並再試一次。若仍未載入此網頁，則基於 Web 安全性原因將無法內嵌它。替代方案是在敘述中新增連結，以便在新的瀏覽器頁籤中開啟網頁。",
+      "learn": "瞭解詳細資訊",
+      "lblAltText": "替代文字",
+      "placeholderAltText": "為視障讀者輸入此媒體的說明。",
+      "tooltipAltText": "提供此媒體內容的說明，供輔助技術 (如螢幕助讀程式軟體) 使用。描述是選用的，但建議您符合 WCAG 和第 508 節之類的 Web 協助工具指導方針。"
     },
     "editorActionGeocode": {
       "lblTitle": "定位地址或地點",
       "mapMarkerExplain": "使用者在按一下連結時會看到地圖標記"
     },
     "editorActions": {
-      "navigate": "導覽至部分",
+      "navigate": "導覽至其他部分",
       "remove": "移除動作",
       "preview": "預覽動作"
     },

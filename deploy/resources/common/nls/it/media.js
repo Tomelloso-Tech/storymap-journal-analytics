@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Collegamento a pagina Web",
       "lblEmbed": "Incorpora codice",
+      "lblMustUseHTTPS": "I link ai contenuti Web devono iniziare con HTTPS",
       "lblOR": "OPPURE",
       "lblError1": "Errore, cancellare uno dei due campi di input.",
       "lblError2": "Il codice incorporato può contenere un solo %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Collegamento a immagine",
       "lblURLPH": "Il collegamento deve terminare con .jpg, .png, .gif o .bmp.",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Questa immagine non sembra valida. Specificare un collegamento diretto a un file immagine (l'URL in genere termina con .jpg o .png). I collegamenti a una pagina Web che contiene un'immagine non funzioneranno.",
+      "lblURLErrorHTTPS": "Link dell’immagine non valido. L’URL deve iniziare con HTTPS e terminare con un’estensione supportata per i file immagine (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Verifica immagine in corso...",
       "lblLabel": "Didascalia immagine",
       "lblLabel1": "Didascalia",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Adatta",
       "lblPosition4": "Estendi",
       "lblPosition5": "Personalizza",
-      "lblURLHelp": "Per ottimizzare i risultati, le immagini devono avere dimensioni minori di 400 KB. Utilizzare immagini JPG compresse con una qualità all'80%, nonché le seguenti larghezze consigliate: 2000 pixel per i pannelli di visualizzazione principale o narrazione, 1000 pixel per i pannelli di narrazione senza il pulsante di ingrandimento.<br><br>Se la visualizzazione di un'immagine collegata risulta rallentata, caricare l'immagine nella storia per ottimizzare il risultato.",
+      "lblURLHelp": "I link delle immagini devono iniziare con HTTPS.<br><br>Per ottimizzare i risultati, le immagini devono avere dimensioni inferiori a 400 KB. Utilizzare immagini JPG compresse con qualità all'80%e le seguenti larghezze consigliate: 2000 pixel per i pannelli di visualizzazione principale o narrazione, 1000 pixel per i pannelli di narrazione senza il pulsante di ingrandimento.<br><br>Se la visualizzazione di un'immagine collegata a un link risulta lenta, caricare l'immagine nella storia per ottimizzare il risultato.",
       "tooltipDimension": "Il valore può essere specificato come 'px' o '%'",
       "tooltipDimension2": "Il valore deve essere specificato in 'px'",
       "lblPosition2Explain": "(possibile ritaglio)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Scarica quando il lettore passa a un altro elemento",
       "unloadHelp": "Se la pagina Web dispone di supporti audio o video, mantenere l'opzione selezionata per arrestare la riproduzione del contenuto quando il lettore passa a un elemento diverso. Deselezionarla, per esempio, per mantenere la riproduzione di una colonna sonora mentre il lettore continua a leggere la storia.<br />Se la pagina Web è un'applicazione, deselezionare l'opzione in modo che la storia non venga ricaricata se il lettore torna alla pagina.",
       "embedProtocolLabel": "Caricare una pagina su una connessione protetta (HTTPS)",
-      "embedProtocolWarning1": "Se questa pagina non viene caricata nella storia, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Ulteriori informazioni</a>",
-      "embedProtocolWarning2": "Se questa pagina non viene caricata nella storia, deselezionare questa opzione e riprovare. Se il problema persiste, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Ulteriori informazioni</a>"
+      "embedProtocolWarning1": "Se questa pagina non viene caricata nella storia, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser.",
+      "embedProtocolWarning2": "Se questa pagina non viene caricata nella storia, deselezionare questa opzione e riprovare. Se il problema persiste, significa che non può essere incorporata per motivi di sicurezza Web. In alternativa, aggiungere un collegamento al racconto per aprire la pagina in una nuova scheda del browser.",
+      "learn": "Ulteriori informazioni",
+      "lblAltText": "Testo alternativo",
+      "placeholderAltText": "Inserire una descrizione di questo contenuto multimediale per i lettori con disabilità visive...",
+      "tooltipAltText": "Inserire una descrizione di questo contenuto multimediale che verrà utilizzato da tecnologie assistive quali il software di lettura dello schermo. La descrizione è facoltativa ma è consigliata per adempiere alle linee guida di accessibilità del web come la WCAG e la Sezione 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Trova un indirizzo o un luogo",
       "mapMarkerExplain": "Quando l'utente fa clic sul collegamento, verrà visualizzato un marcatore di mappa"
     },
     "editorActions": {
-      "navigate": "Passa a una sezione",
+      "navigate": "Passa a un’altra sezione",
       "remove": "Rimuovi azione",
       "preview": "Anteprima azione"
     },

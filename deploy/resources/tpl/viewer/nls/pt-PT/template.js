@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "Fechar"
+      "close": "Fechar",
+      "focusMainstage": "Enviar foco de teclado para media",
+      "expandImage": "Expandir imagem"
+    },
+    "a11y": {
+      "skipToContent": "Avançar para a narrativa",
+      "headerAria": "Cabeçalho da história",
+      "panelAria": "Narrativa da história",
+      "mainStageAria": "Media da atual secção da história",
+      "logoLinkAria": "Ligação ao logótipo",
+      "toTop": "Ir para o início da narrativa",
+      "focusContent": "Regressar à narrativa",
+      "navAria": "Secções da história",
+      "navPreviousAria": "Secção anterior",
+      "navNextAria": "Próxima secção",
+      "toSectionAria": "Ir para secção %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Próximo grupo de secções (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Grupo de secções anterior (%SECTION_RANGE%)",
+      "loadingAria": "O conteúdo da história está a carregar"
     },
     "loading": {
       "step1": "A carregar a história",
@@ -63,7 +81,7 @@ define({
       "errorNotPublished": "Esta ligação não se encontra ativa (a secção não se encontra publicada)"
     },
     "headerFromCommon": {
-      "storymapsText": "Um mapa de história",
+      "storymapsText": "Um Story Map",
       "builderButton": "Editar",
       "facebookTooltip": "Partilhar no Facebook",
       "twitterTooltip": "Partilhar no Twitter",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Isto não está disponível no modo de reprodução automática",
       "notshared": "História não partilhada"
     },
-    "overviewFromCommon": {
-      "title": "Vista Geral do Mapa"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Vista Geral do Mapa",
+      "legend": "Legenda",
+      "home": "Aplicar Zoom a Página Inicial"
     },
     "shareFromCommon": {
       "copy": "Copiar",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "Quando este modo está activo existem controles para reproduzir/pausar a história e ajustar a velocidade de navegação.",
       "linksupdated": "Links actualizados!",
       "print": "Imprimir",
-      "printInstruction1": "Por favor, aguarde que todo o conteúdo seja carregado antes de imprimir esta página.",
-      "printInstruction1a": "Algum conteúdo poderá não ser impresso, a não ser que ative “Imprimir Cores e Imagens de Fundo” na caixa de diálogo Página de Impressão.",
+      "printInstruction1": "Por favor, aguarde até que a história seja totalmente carregada antes de imprimir",
+      "printInstruction1a": "Caso esta página demore a carregar ou algum media não aparecer, experimente imprimir um intervalo de secções mais reduzido.",
+      "printInstruction1b": "Para obter melhores resultados, poderá necessitar de ativar a impressão de elementos de fundo nas definições de impressão do seu navegador.",
       "printInstruction2": "Esta página não pode ser partilhada; ao invés, partilhe a ${link}",
       "link": "ligação à história",
+      "optionsHeader": "Opções",
       "printOptPageBreak": "Iniciar cada secção numa nova página",
       "makeTextBlack": "Colocar todo o texto a negro",
-      "printWarning": "Esta é uma versão impressa de um story map. Conteúdo dinâmico, tal como vídeos e mapas interativos, encontra-se apenas disponível na versão online na ${link}",
+      "showLinks": "Exibir URLs de ligação",
+      "madeWith": "Esta história foi criada com ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Jornal de Story Maps da Esri",
+      "readItOnline": "Leia a versão interativa na web em ${link}.",
       "printMSWarning": "ligação disponível apenas na história online",
-      "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste story map."
+      "printVideoWarning": "Este vídeo pode ser visualizado na versão online deste story map.",
+      "printRangeHeader": "Imprimir parte desta história",
+      "sectionLabel": "Secções:",
+      "apply": "Aplicar",
+      "resetRange": "Restaurar para história completa"
     }
   }
 });

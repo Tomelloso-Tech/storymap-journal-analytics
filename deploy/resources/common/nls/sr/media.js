@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Link veb stranice",
       "lblEmbed": "Ugradi kôd",
+      "lblMustUseHTTPS": "Linkovi ka veb sadržaju moraju da počinju sa HTTPS",
       "lblOR": "ILI",
       "lblError1": "Greška, obrišite jedno od dva polja za unos.",
       "lblError2": "Ugrađeni kôd može da sadrži samo jedan %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Link snimka",
       "lblURLPH": "Link bi trebalo da se završava sa .jpg, .png, .gif ili .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Ovaj snimak nije validan. Odredite direktnu vezu na datoteku snimka (URL adresa se obično završava sa .jpg ili .png). Veze ka veb stranici koja sadrži snimak ne rade.",
+      "lblURLErrorHTTPS": "Ovaj link snimka nije validan. URL mora da počinje sa HTTPS i da se završava sa podržanom ekstenzijom datoteke snimka (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Proveravanje snimka...",
       "lblLabel": "Natpis snimka",
       "lblLabel1": "Natpis",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Uklapanje",
       "lblPosition4": "Rastezanje",
       "lblPosition5": "Prilagođeno",
-      "lblURLHelp": "Za najbolje rezultate, snimci bi trebalo da budu manji od 400 KB. Koristite komprimovane JPG snimke pri kvalitetu od 80% i preporučenim širinama: 2000 piksela za centralni deo ili tablu narativa sa dugmetom za uvećavanje, 1000 piksela za tablu narativa bez dugmeta za uvećavanje.<br><br>Ako se linkovani snimak sporo iscrtava, otpremite ga u svoju priču za bolje rezultate.",
+      "lblURLHelp": "Link snimka mora da počinje sa HTTPS.<br><br>Za najbolje rezultate, snimci bi trebalo da budu manji od 400 KB. Koristite komprimovane JPG snimke pri kvalitetu od 80% i preporučenim širinama: 2000 piksela za centralni deo ili narativni panel sa dugmetom za uvećavanje, 1000 piksela za narativni panel bez dugmeta za uvećavanje.<br><br>Ako se linkovani snimak sporo iscrtava, otpremite ga u svoju priču za bolje rezultate.",
       "tooltipDimension": "Vrednost može da bude određena u „px“ ili „%“",
       "tooltipDimension2": "Vrednost mora da bude određena u „px“ ili „%“",
       "lblPosition2Explain": "(rezanje moguće)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Poništi učitavanje kada čitalac napusti stranicu",
       "unloadHelp": "Ako veb stranica ima sadržaje audio ili video formata, označite ovu opciju kao potvrđenu da zaustavite reprodukciju tog sadržaja kada čitalac napusti stranicu. Označite je kao nepotvrđenu da zvuk nastavi sa reprodukcijom kako čitalac „ide“ kroz priču.<br />Ako je veb stranica aplikacija, označite ovu opciju kao nepotvrđenu tako da se priča ne učitava ponovo kada se čitalac vrati na nju.",
       "embedProtocolLabel": "Učitaj stranicu preko bezbedne veze (HTTPS)",
-      "embedProtocolWarning1": "Ako se ova stranica ne učitava u vašoj priči, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Saznajte više</a>",
-      "embedProtocolWarning2": "Ako se ova stranica ne učitava u vašoj priči, poništite izbor ove opcije i pokušajte ponovo. Ako se stranica i dalje ne učitava, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Saznajte više</a>"
+      "embedProtocolWarning1": "Ako se ova stranica ne učitava u vašoj priči, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača.",
+      "embedProtocolWarning2": "Ako se ova stranica ne učitava u vašoj priči, poništite izbor ove opcije i pokušajte ponovo. Ako se stranica i dalje ne učitava, može da bude ugrađena iz veb sigurnosnih razloga. Kao alternativu, dodajte link u svom narativu da biste otvorili stranicu u novoj kartici pregledača.",
+      "learn": "Saznaj više",
+      "lblAltText": "Alternativni tekst",
+      "placeholderAltText": "Unesite opis ovih medija za osobe oštećenog vida...",
+      "tooltipAltText": "Unesite opis sadržaja ovih medija koji će koristiti pomoćne tehnologije, kao što je softver čitača ekrana. Opis je opcioni, ali se preporučuje radi ispunjavanja uputstava za veb pristupačnost poput WCAG i Odeljak 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Locirajte adresu ili mesto",
       "mapMarkerExplain": "Korisnik će videti označivač mape kada klikne na link"
     },
     "editorActions": {
-      "navigate": "Idi na odeljak",
+      "navigate": "Posetite drugi odeljak",
       "remove": "Ukloni radnju",
       "preview": "Pregledaj radnju"
     },

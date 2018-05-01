@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "إغلاق"
+      "close": "إغلاق",
+      "focusMainstage": "إرسال تركيز لوحة المفاتيح إلى الوسائط",
+      "expandImage": "توسيع الصورة"
+    },
+    "a11y": {
+      "skipToContent": "انتقل إلى السرد",
+      "headerAria": "عنوان القصة",
+      "panelAria": "سرد القصة",
+      "mainStageAria": "وسائط جزء القصة الحالي",
+      "logoLinkAria": "رابط الشعار",
+      "toTop": "انتقل إلى بداية السرد",
+      "focusContent": "العودة إلى السرد",
+      "navAria": "أجزاء القصة",
+      "navPreviousAria": "الجزء السابق",
+      "navNextAria": "الجزء التالي",
+      "toSectionAria": "انتقل إلى الجزء %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "مجموعة الأجزاء التالية (%SECTION_RANGE%)",
+      "toPrevGroupAria": "مجموعة الأجزاء السابقة (%SECTION_RANGE%)",
+      "loadingAria": "جارِ تحميل محتوى القصة"
     },
     "loading": {
       "step1": "تحميل القصة",
@@ -63,7 +81,7 @@ define({
       "errorNotPublished": "هذا الرابط غير نشط (لم يتم نشر القسم)"
     },
     "headerFromCommon": {
-      "storymapsText": "قصة داخل خريطة",
+      "storymapsText": "خريطة قصة",
       "builderButton": "تحرير",
       "facebookTooltip": "مشاركة على الفيس بوك",
       "twitterTooltip": "مشاركة على تويتر",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "وهو غير متوفر في عرض التشغيل التلقائي",
       "notshared": "لم يتم مشاركة القصة"
     },
-    "overviewFromCommon": {
-      "title": "خريطة النظرة العامة"
-    },
-    "legendFromCommon": {
-      "title": "مفتاح الخريطة"
+    "mapFromCommon": {
+      "overview": "خريطة النظرة العامة",
+      "legend": "وسيلة الإيضاح",
+      "home": "الصفحة الرئيسية للتكبير/التصغير"
     },
     "shareFromCommon": {
       "copy": "نسخ",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "عندما يكون هذا الوضع نشطًا، تتوفر عناصر تحكم تشغيل/إيقاف تشغيل القصة وتعديل سرعة الانتقال.",
       "linksupdated": "تم تحديث الروابط!",
       "print": "طباعة",
-      "printInstruction1": "يرجى الانتظار لتحميل المحتوى بالكامل قبل طباعة الصفحة الحالية",
-      "printInstruction1a": "لن يتم طباعة بعض المحتوى مالم يتم تمكين \"طباعة ألوان الخلفية والصور\" في مربع حوار إعداد صفحة الطباعة",
+      "printInstruction1": "الرجاء انتظار القصة بالكامل للتحميل قبل الطباعة",
+      "printInstruction1a": "إذا كان يتم تحميل الصفحة ببطئ أو لا تظهر بعض الوسائط، جرب طباعة نطاق أصغر من الأقسام.",
+      "printInstruction1b": "للحصول على أفضل النتائج، قد تريد تمكين طبعة عناصر الخلفية في إعدادات طباعة المستعرض.",
       "printInstruction2": "لا يمكن مشاركة الصفحة مع الآخرين بدلاً من مشاركة ${link}",
       "link": "رابط الحكاية",
+      "optionsHeader": "خيارات",
       "printOptPageBreak": "بدء كل جزء في الصفحة الجديدة",
       "makeTextBlack": "جعل كل النص باللون الأسود",
-      "printWarning": "ها هو الإصدار المطبوع من خريطة الحكاية. يتوفر المحتوى الديناميكي باعتباره مقاطع فيديو وخرائط تفاعلية فقط في الإصدار المتصل في ${link}",
+      "showLinks": "إظهار عناوين URL للرابط",
+      "madeWith": "تم إنشاء هذه القصة بواسطة ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "صحيفة خرائط قصص Esri",
+      "readItOnline": "اقرأ الإصدار التفاعلي على الويب في ${link}.",
       "printMSWarning": "رابط متوفر فقط في الحكاية المتصلة",
-      "printVideoWarning": "يمكن عرض مقطع الفيديو في الإصدار المتصل لخريطة الحكاية"
+      "printVideoWarning": "يمكن عرض مقطع الفيديو في الإصدار المتصل لخريطة الحكاية",
+      "printRangeHeader": "جزء طباعة هذه القصة",
+      "sectionLabel": "الأقسام:",
+      "apply": "تطبيق",
+      "resetRange": "إعادة تعيين القصة بالكامل"
     }
   }
 });

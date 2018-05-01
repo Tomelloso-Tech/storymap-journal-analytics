@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "웹 페이지 링크",
       "lblEmbed": "코드 포함",
+      "lblMustUseHTTPS": "웹 콘텐츠에 대한 링크는 HTTPS로 시작해야 함",
       "lblOR": "또는",
       "lblError1": "오류가 발생했습니다. 두 개의 입력 필드 중 하나를 지우세요.",
       "lblError2": "코드 포함에는 %IFRAMETAG% 하나만 포함 가능",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "이미지 링크",
       "lblURLPH": "링크는.jpg, .png, .gif 또는 .bmp 형식이어야 함",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "이 이미지는 올바른 것 같지 않습니다. 이미지 파일(URL이 대개 .jpg 또는 .png로 끝남)에 대한 직접 링크를 지정하세요. 이미지를 포함하는 웹 페이지 링크는 작동하지 않습니다.",
+      "lblURLErrorHTTPS": "이 이미지 링크는 올바르지 않습니다. URL은 HTTPS로 시작해야 하며 지원되는 이미지 파일 확장자(.jpg, .png, .gif, .bmp)로 끝나야 합니다.",
       "lblURLCheck": "이미지 확인 중...",
       "lblLabel": "이미지 캡션",
       "lblLabel1": "캡션",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "맞춤",
       "lblPosition4": "늘이기",
       "lblPosition5": "사용자 지정",
-      "lblURLHelp": "최상의 결과를 위해 이미지 크기는 400KB 미만이어야 합니다. 80% 품질의 압축된 JPG 이미지와 권장 이미지 너비(주요 단계 또는 최대화 버튼이 있는 설명 패널의 경우 2000픽셀, 최대화 버튼이 없는 설명 패널의 경우 1000픽셀)를 사용하세요.<br><br>연결된 이미지가 느린 경우 스토리에 업로드하면 더욱 빠르게 불러옵니다.",
+      "lblURLHelp": "이미지 링크는 HTTPS로 시작해야 합니다.<br><br>최상의 결과를 위해 이미지 크기는 400KB 미만이어야 합니다. 80% 품질의 압축된 JPG 이미지와 권장 이미지 너비(주요 단계 또는 최대화 버튼이 있는 설명 패널의 경우 2000픽셀, 최대화 버튼이 없는 설명 패널의 경우 1000픽셀)를 사용하세요.<br><br>연결된 이미지가 느린 경우 스토리에 업로드하면 더욱 빠르게 불러옵니다.",
       "tooltipDimension": "값은 'px' 또는 '%'로 지정할 수 있음",
       "tooltipDimension2": "'px' 단위로 값을 지정해야 함",
       "lblPosition2Explain": "(잘릴 수 있음)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "독자가 다른 위치를 탐색할 때 언로드",
       "unloadHelp": "웹 페이지에 오디오 또는 비디오 미디어가 있는 경우 이 옵션을 선택 상태로 유지하여 독자가 다른 위치를 탐색할 때 콘텐츠가 재생되는 것을 방지할 수 있습니다. 독자가 스토리를 진행할 때 사운드 트랙이 재생되도록 하려는 등의 경우에는 옵션을 선택 취소합니다.<br />웹 페이지가 응용프로그램인 경우 독자가 돌아왔을 때 스토리를 다시 불러오지 않도록 이 옵션을 선택 취소합니다.",
       "embedProtocolLabel": "보안 연결(HTTPS)을 통해 페이지 불러오기",
-      "embedProtocolWarning1": "스토리에서 이 페이지를 불러오지 않는 경우 웹 보안상의 이유로 임베드되지 않을 수 있습니다. 대신 이야기에 링크를 추가하여 새 브라우저 탭에서 페이지를 열 수 있습니다. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>자세한 정보</a>",
-      "embedProtocolWarning2": "스토리에서 이 페이지를 불러오지 않는 경우 이 옵션을 선택 취소하고 다시 시도하세요. 해당 페이지를 여전히 불러올 수 없으면 웹 보안상의 이유로 임베드되지 않을 수 있습니다. 대신 이야기에 링크를 추가하여 새 브라우저 탭에서 페이지를 열 수 있습니다. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>자세한 정보</a>"
+      "embedProtocolWarning1": "스토리에서 이 페이지를 불러오지 않는 경우 웹 보안상의 이유로 임베드되지 않을 수 있습니다. 대신 이야기에 링크를 추가하여 새 브라우저 탭에서 페이지를 열 수 있습니다.",
+      "embedProtocolWarning2": "스토리에서 이 페이지를 불러오지 않는 경우 이 옵션을 선택 취소하고 다시 시도하세요. 해당 페이지를 여전히 불러올 수 없다면 웹 보안상의 이유로 임베드되지 않을 수 있습니다. 대신 이야기에 링크를 추가하여 새 브라우저 탭에서 페이지를 열 수 있습니다.",
+      "learn": "자세한 정보",
+      "lblAltText": "대체 텍스트",
+      "placeholderAltText": "시각 장애 독자를 위해 이 미디어에 대한 설명 입력...",
+      "tooltipAltText": "이 미디어 콘텐츠에 대한 설명을 제공합니다. 이 설명은 화면 읽기 소프트웨어 등의 보조 기술에 사용됩니다. 설명은 선택 사항이지만 WCAG 및 Section 508 등의 웹 접근성 지침을 충족시키기 위해 권장됩니다."
     },
     "editorActionGeocode": {
       "lblTitle": "주소 또는 장소 찾기",
       "mapMarkerExplain": "링크를 클릭하면 맵 표식이 표시됩니다."
     },
     "editorActions": {
-      "navigate": "섹션으로 이동",
+      "navigate": "다른 섹션으로 이동",
       "remove": "작업 제거",
       "preview": "작업 미리 보기"
     },

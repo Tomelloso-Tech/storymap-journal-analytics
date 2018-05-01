@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "閉じる"
+      "close": "閉じる",
+      "focusMainstage": "キーボード フォーカスをメディアに送信",
+      "expandImage": "画像の拡大"
+    },
+    "a11y": {
+      "skipToContent": "注釈に移動",
+      "headerAria": "ストーリーのヘッダー",
+      "panelAria": "ストーリーの注釈",
+      "mainStageAria": "現在のストーリー セクション メディア",
+      "logoLinkAria": "ロゴのリンク",
+      "toTop": "注釈の最初に移動",
+      "focusContent": "注釈に戻る",
+      "navAria": "ストーリーのセクション",
+      "navPreviousAria": "前のセクション",
+      "navNextAria": "次のセクション",
+      "toSectionAria": "セクション %SECTION_NUMBER%: %SECTION_TITLE% に移動",
+      "toNextGroupAria": "セクションの次のグループ (%SECTION_RANGE%)",
+      "toPrevGroupAria": "セクションの前のグループ (%SECTION_RANGE%)",
+      "loadingAria": "ストーリーのコンテンツを読み込んでいます"
     },
     "loading": {
       "step1": "ストーリーの読み込み",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "これは、自動再生モードでは使用できません",
       "notshared": "ストーリーが共有されていません"
     },
-    "overviewFromCommon": {
-      "title": "概観図"
-    },
-    "legendFromCommon": {
-      "title": "凡例"
+    "mapFromCommon": {
+      "overview": "概観図",
+      "legend": "凡例",
+      "home": "ホームへズーム"
     },
     "shareFromCommon": {
       "copy": "コピー",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "このモードがアクティブの場合、ストーリーの再生/一時停止および再生速度の調整を行うコントロールが表示されます。",
       "linksupdated": "リンクが更新されました",
       "print": "印刷",
-      "printInstruction1": "すべてのコンテンツが読み込まれてから、このページを印刷してください",
-      "printInstruction1a": "[ページの印刷] 設定ダイアログで [背景の色とイメージを印刷する] を有効化しない場合、一部のコンテンツを印刷できない場合があります",
+      "printInstruction1": "ストーリー全体の読み込みが終了してから印刷してください",
+      "printInstruction1a": "このページの読み込みが遅い、またはメディアが表示されない場合は、印刷するセクションの範囲を小さくしてみてください。",
+      "printInstruction1b": "最善の結果を得るために、ブラウザーの印刷設定で、背景要素の印刷を有効にする必要がある場合もあります。",
       "printInstruction2": "このページは他のユーザーと共有できません。代わりに、ストーリーへの",
       "link": "リンク ${link} を共有してください",
+      "optionsHeader": "オプション",
       "printOptPageBreak": "各セクションを新しいページで開始する",
       "makeTextBlack": "すべてのテキストを黒くする",
-      "printWarning": "これは、印刷バージョンのストーリー マップです。ビデオや対話式マップなどの動的なコンテンツは、オンライン バージョン (${link}) でのみ利用できます",
+      "showLinks": "リンク URL の表示",
+      "madeWith": "このストーリーは ${JOURNAL_LINK_TEXT} で作成されました。",
+      "journalLinkText": "Esri ストーリー マップ ジャーナル",
+      "readItOnline": "Web 上の ${link} で対話形式のバージョンを読み取ります。",
       "printMSWarning": "リンクは、オンライン バージョンでのみ使用できます",
-      "printVideoWarning": "このビデオは、このストーリー マップのオンライン バージョンで表示できます。"
+      "printVideoWarning": "このビデオは、このストーリー マップのオンライン バージョンで表示できます。",
+      "printRangeHeader": "このストーリーの印刷部分",
+      "sectionLabel": "セクション:",
+      "apply": "適用",
+      "resetRange": "ストーリー全体にリセット"
     }
   }
 });

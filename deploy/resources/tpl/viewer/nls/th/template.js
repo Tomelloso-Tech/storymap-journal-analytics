@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "ปิด"
+      "close": "ปิด",
+      "focusMainstage": "ส่งโฟกัสของแป้นพิมพ์ไปยังสื่อ",
+      "expandImage": "ขยายภาพ"
+    },
+    "a11y": {
+      "skipToContent": "ข้ามไปยังคำบรรยาย",
+      "headerAria": "ส่วนหัวของเรื่องราว",
+      "panelAria": "คำบรรยายเรื่องราว",
+      "mainStageAria": "สื่อของส่วนเรื่องราวปัจจุบัน",
+      "logoLinkAria": "โลโก้ที่เชื่องโยงไปยัง",
+      "toTop": "ไปที่จุดเริ่มต้นของคำบรรยาย",
+      "focusContent": "กลับไปที่คำบรรยาย",
+      "navAria": "ส่วนของเรื่องราว",
+      "navPreviousAria": "ส่วนก่อนหน้า",
+      "navNextAria": "ส่วนถัดไป",
+      "toSectionAria": "ไปที่ส่วน %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "กลุ่มของส่วนถัดไป (%SECTION_RANGE%)",
+      "toPrevGroupAria": "กลุ่มของส่วนก่อนหน้า (%SECTION_RANGE%)",
+      "loadingAria": "กำลังโหลดเนื้อหาเรื่องราว"
     },
     "loading": {
       "step1": "กำลังโหลดเรื่องราว",
@@ -63,7 +81,7 @@ define({
       "errorNotPublished": "ลิงค์นี้ไม่ได้ใช้งาน (ส่วนจะไม่เผยแพร่)"
     },
     "headerFromCommon": {
-      "storymapsText": "A story map",
+      "storymapsText": "Story Map",
       "builderButton": "แก้ไข",
       "facebookTooltip": "แชร์ผ่าน Facebook",
       "twitterTooltip": "แชร์ผ่าน Twitter",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "สิ่งนี้ไม่สามารถใช้ได้ในโหมดเล่นอัตโนมัติ",
       "notshared": "ไม่ได้แชร์สตอรี่"
     },
-    "overviewFromCommon": {
-      "title": "ภาพรวมของแผนที่"
-    },
-    "legendFromCommon": {
-      "title": "สัญลักษณ์"
+    "mapFromCommon": {
+      "overview": "ภาพรวมของแผนที่",
+      "legend": "คำอธิบายสัญลักษณ์",
+      "home": "ซูมบ้าน"
     },
     "shareFromCommon": {
       "copy": "คัดลอก",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "เมื่อโหมดนี้มีการใช้งานยังมีการควบคุมการเล่น / หยุดชั่วคราวเรื่องราวและปรับความเร็วลูกศร",
       "linksupdated": "ลิงค์นี้อัพเดทแล้ว",
       "print": "พิมพ์",
-      "printInstruction1": "โปรดรอให้เนื้อหาทั้งหมดถูกโหลดชึ้นมาก่อนทำการพิมพ์",
-      "printInstruction1a": "เนื้อหาบางส่วนไม่สามารถพิมพ์ได้ จนกระทั่งสั่งเปิด “พิมพ์สีพื้นหลังและรูปภาพ” ในหน้าต่างการตั้งค่าไดอะล๊อกการพิมพ์",
+      "printInstruction1": "โปรดรอให้โหลดเรื่องราวทั้งหมดก่อนพิมพ์",
+      "printInstruction1a": "หากหน้านี้โหลดช้าหรือสื่อบางอย่างไม่ปรากฏขึ้น ให้ลองพิมพ์ส่วนต่าง ๆ ที่เล็กลง",
+      "printInstruction1b": "เพื่อให้ได้ผลลัพธ์ที่ดีที่สุด คุณอาจต้องเปิดใช้งานการพิมพ์องค์ประกอบพื้นหลังในการตั้งค่าการพิมพ์ของเบราว์เซอร์",
       "printInstruction2": "หน้าต่างนี้ ไม่สามารถแบ่งปันผู้อื่นได้ เว้นแต่แบ่งปันลิงค์",
       "link": "เชื่อมต่อเรื่องราว",
+      "optionsHeader": "ตัวเลือก",
       "printOptPageBreak": "เริ่มต้นแต่ละส่วนที่หน้าต่างใหม่",
       "makeTextBlack": "ทำให้ข้อความสีดำทั้งหมด",
-      "printWarning": "นี่คือรูปแบบการพิมพ์ของแผนที่เรื่องราว ที่มีการไดนามิกของเนื้อหา ไม่ว่าจะเป็นวีดีโอ และการโต้ตอบของแผนที่นั้น จะเรียกดูผ่านลิงค์ออนไลน์",
+      "showLinks": "แสดง URL ของลิงก์",
+      "madeWith": "เรื่องราวนี้ทำขึ้นด้วย ${JOURNAL_LINK_TEXT}",
+      "journalLinkText": "Story Map Journal ของ Esri",
+      "readItOnline": "อ่านเวอร์ชันแบบโต้ตอบบนเว็บที่ ${link}",
       "printMSWarning": "ลิงค์สามารถเรียกดูได้บนเรื่องราวออนไลน์เท่านั้น",
-      "printVideoWarning": "วีดีโอนี้สามารถเรียกดูได้ในส่วนของเวอร์ชั่นออนไลน์ของแผนที่เรื่องราว"
+      "printVideoWarning": "วีดีโอนี้สามารถเรียกดูได้ในส่วนของเวอร์ชั่นออนไลน์ของแผนที่เรื่องราว",
+      "printRangeHeader": "พิมพ์ส่วนของเรื่องราวนี้",
+      "sectionLabel": "ส่วน:",
+      "apply": "ใช้",
+      "resetRange": "รีเซ็ตเป็นเรื่องราวทั้งหมด"
     }
   }
 });

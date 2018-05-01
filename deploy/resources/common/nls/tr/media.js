@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Web sayfası bağlantısı",
       "lblEmbed": "Kod ekle",
+      "lblMustUseHTTPS": "Web içeriğinin bağlantıları HTTPS ile başlamalıdır",
       "lblOR": "YA DA",
       "lblError1": "Hata, iki giriş alanından birini silin.",
       "lblError2": "İçe yerleştime kodu yalnızca bir %IFRAMETAG% içerebilir",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Görüntü bağlantısı",
       "lblURLPH": "Bağlantı .jpg, .png, .gif veya .bmp ile bitmelidir",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Bu görüntü geçerli gibi görünmüyor. Bir görüntü dosyasına bir doğrudan bağlantı belirtin (URL'niz genelde .jpg ya da .png ile biter). Bir web sayfasının bağlantıları çalışmayan bir görüntü içeriyor.",
+      "lblURLErrorHTTPS": "Bu görüntü bağlantısı geçerli değil. URL HTTPS ile başlamalı ve desteklenen bir görüntü dosyası uzantısıyla (.jpg, .png, .gif, .bmp) bitmelidir.",
       "lblURLCheck": "Görüntü denetleniyor...",
       "lblLabel": "Görüntü alt yazısı",
       "lblLabel1": "Altyazı",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Sığdır",
       "lblPosition4": "Esnet",
       "lblPosition5": "Özel",
-      "lblURLHelp": "En iyi sonuçlar için görüntülerin 400 KB boyutundan küçük olması gerekir. %80 kalitesinde sıkıştırılmış JPG görüntüleri kullanın, önerilen görüntü genişlikleri şunlardır: ana sahne veya maksimize et düğmesi olan açıklama bölmesi için 2.000 piksel, maksimize et düğmesi olmayan açıklama bölmesi için 1.000 piksel.<br><br>Bağlantılı bir görüntü yavaş çizildiği takdirde, bunu hikayenize yükleyerek daha iyi bir sonuç alabilirsiniz.",
+      "lblURLHelp": "Görüntü bağlantısı HTTPS ile başlamalıdır.<br><br>En iyi sonuçlar için görüntülerin 400 KB boyutundan küçük olması gerekir. %80 kalitede sıkıştırılmış JPG görüntüleri kullanın, önerilen görüntü genişlikleri şunlardır: ana sahne veya ekranı kaplama düğmesi olan açıklama bölmesi için 2.000 piksel, ekranı kaplama düğmesi olmayan açıklama bölmesi için 1.000 piksel.<br><br>Bağlantılı bir görüntü yavaş çizildiği takdirde, bunu hikayenize yükleyerek daha iyi bir sonuç alabilirsiniz.",
       "tooltipDimension": "Değer 'px' ya da '%' cinsinden belirtilebilir",
       "tooltipDimension2": "Değer //'px//' cinsinden belirtilmelidir",
       "lblPosition2Explain": "(kırpılabilir)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Okuyucu başka yere gittiğinde yüklemeyi kaldır",
       "unloadHelp": "Web sayfasında ses veya video ortamı varsa, okuyucu başka bir yere gittiğinde içeriğin oynatımını durdurmak için bu seçeneği işaretli bırakın. Okuyucu metin boyunca ilerlerken örneğin bir arka plan müziğini oynatmaya devam etmek için işareti kaldırın.<br />Web sayfası bir uygulamaysa, bu seçeneğin işaretini kaldırarak, okuyucu geri döndüğünde hikayenin yeniden yüklenmesini önleyebilirsiniz.",
       "embedProtocolLabel": "Sayfayı bir güvenli bağlantı üzerinden yükle (HTTPS)",
-      "embedProtocolWarning1": "Bu sayfa hikayenizde yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Daha fazla bilgi</a>",
-      "embedProtocolWarning2": "Bu sayfa hikayenizde yüklenmiyorsa, bu seçeneğin işaretini kaldırın ve yeniden deneyin. Sayfa yine de yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Daha fazla bilgi</a>"
+      "embedProtocolWarning1": "Bu sayfa hikayenizde yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz.",
+      "embedProtocolWarning2": "Bu sayfa hikayenizde yüklenmiyorsa, bu seçeneğin işaretini kaldırın ve yeniden deneyin. Sayfa yine de yüklenmiyorsa, web güvenliği nedeniyle katıştırılamaz. Alternatif olarak, açıklamanıza bir bağlantı ekleyerek sayfayı yeni bir tarayıcı sekmesinde açabilirsiniz.",
+      "learn": "Daha fazla bilgi",
+      "lblAltText": "Alternatif Metin",
+      "placeholderAltText": "Görme engelli okuyucular için bu medyanın bir açıklamasını girin...",
+      "tooltipAltText": "Ekran okuyucu yazılımı gibi yardımcı teknolojilerin kullanacağı bu medya içeriğinin bir açıklaması yapın. Açıklama isteğe bağlıdır ancak WCAG ve Bölüm 508 gibi web erişilebilirlik kurallarını karşılamak için önerilir."
     },
     "editorActionGeocode": {
       "lblTitle": "Adres veya yer bul",
       "mapMarkerExplain": "Kullanıcı bağlantıya tıklarken bir harita işaretçisi görür"
     },
     "editorActions": {
-      "navigate": "Bir bölüme gidin",
+      "navigate": "Başka bir bölüme gidin",
       "remove": "Eylemi kaldır",
       "preview": "Eylemi önizle"
     },
