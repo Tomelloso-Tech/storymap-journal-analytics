@@ -53,7 +53,7 @@ body.layout-float-left .overviewContainer {
 }
 
 body.layout-float-right .legendContainer {
-	left: 15%;
+	left: 5%;
 	right: inherit;
 }
 
@@ -65,4 +65,19 @@ body.layout-float-left:not(.mobile-view) .esriAttribution {
 body.layout-float-left:not(.mobile-view) .esriControlsBR .logo-med {
 	float: left;
 	margin-top: -14px;
+}
+
+.skip-to-content {
+	position: absolute;
+	z-index: 3; /* over side panel */
+}
+
+body.layout-float-left .mainMediaContainer .return-to-content {
+	left: auto;
+	right: 20%;
+}
+
+body.layout-float-right .mainMediaContainer .return-to-content {
+	right: auto;
+	left: 20%;
 }

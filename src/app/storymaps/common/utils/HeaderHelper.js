@@ -49,7 +49,8 @@ define([
 					var logoLink = container.find('.logoLink');
 					if (headerCfg.logoTarget) {
 						logoLink.css('cursor', 'pointer')
-										.attr('href', headerCfg.logoTarget);
+										.attr('href', headerCfg.logoTarget)
+										.attr('aria-label', i18n.viewer.a11y.logoLinkAria);
 					} else {
 						logoLink.css('cursor', 'default')
 										.removeAttr('href');
@@ -67,12 +68,13 @@ define([
 					};
 
 					logoImg.attr("src", Helper.possiblyAddToken(headerCfg.logoURL)).show();
+					logoImg.attr('alt', i18n.viewer.a11y.logoAria);
 				}
 			},
 			setLink: function(container, headerCfg)
 			{
 				if( headerCfg.linkURL && headerCfg.linkText )
-					container.find('.linkContainer').html('<a href="' + headerCfg.linkURL + '" class="link" target="_blank" tabindex="-1">' + headerCfg.linkText + '</a>');
+					container.find('.linkContainer').html('<a href="' + headerCfg.linkURL + '" class="link" target="_blank">' + headerCfg.linkText + '</a>');
 				else
 					container.find('.linkContainer').html(headerCfg.linkText);
 			},
@@ -182,9 +184,9 @@ define([
 					}
 				});
 
-				container.find('.share_facebook').attr("title", i18n.viewer.headerFromCommon.facebookTooltip);
-				container.find('.share_twitter').attr("title", i18n.viewer.headerFromCommon.twitterTooltip);
-				container.find('.share_bitly').attr("title", i18n.viewer.headerFromCommon.bitlyTooltip);
+				container.find('.share_facebook').attr("title", i18n.viewer.headerFromCommon.facebookTooltip).attr('aria-label', i18n.viewer.headerFromCommon.facebookTooltip);
+				container.find('.share_twitter').attr("title", i18n.viewer.headerFromCommon.twitterTooltip).attr('aria-label', i18n.viewer.headerFromCommon.twitterTooltip);
+				container.find('.share_bitly').attr("title", i18n.viewer.headerFromCommon.bitlyTooltip).attr('aria-label', i18n.viewer.headerFromCommon.bitlyTooltip);
 
 				$(window).resize(function(){
 					resizeLinkContainer(container);

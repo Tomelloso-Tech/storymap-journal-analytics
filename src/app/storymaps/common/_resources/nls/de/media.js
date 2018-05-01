@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Webseiten-Link",
       "lblEmbed": "Eingebundener Code",
+      "lblMustUseHTTPS": "Links zu Webinhalten müssen mit HTTPS beginnen",
       "lblOR": "ODER",
       "lblError1": "Fehler. Löschen Sie den Inhalt eines der beiden Eingabefelder.",
       "lblError2": "Der eingebettete Code darf nur ein %IFRAMETAG% enthalten",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Bild-Link",
       "lblURLPH": "Link sollte mit .jpg, .png, .gif oder .bmp enden",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Dieses Bild ist scheinbar nicht gültig. Geben Sie einen direkten Link zu einer Bilddatei an (die URL endet in der Regel mit .jpg oder .png). Links zu einer Webseite, die Bilder enthält, funktionieren nicht.",
+      "lblURLErrorHTTPS": "Dieser Bildlink ist nicht gültig. Die URL muss mit HTTPS beginnen und mit einer unterstützten Erweiterung für Bilddateien (.jpg, .png, .gif, .bmp) enden.",
       "lblURLCheck": "Bild wird überprüft...",
       "lblLabel": "Bildüberschrift",
       "lblLabel1": "Beschriftung",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Einpassen",
       "lblPosition4": "Strecken",
       "lblPosition5": "Benutzerdefiniert",
-      "lblURLHelp": "Für optimale Ergebnisse sollten Bilder kleiner als 400 KB sein. Verwenden Sie komprimierte JPG-Bilder mit einer Qualität von 80 % sowie diese empfohlenen Bildbreiten: 2000 Pixel für den Haupt- oder Präsentationsbereich mit Vergrößerungsschaltfläche, 1000 Pixel für den Präsentationsbereich ohne Vergrößerungsschaltfläche.<br><br>Wenn ein verknüpftes Bild langsam aufgebaut wird, können Sie es in Ihre Story hochladen, um bessere Ergebnisse zu erzielen.",
+      "lblURLHelp": "Bild-Link muss mit HTTPS beginnen.<br><br>Für optimale Ergebnisse sollten Bilder kleiner als 400 KB sein. Verwenden Sie komprimierte JPG-Bilder mit einer Qualität von 80 % sowie folgenden empfohlenen Bildbreiten: 2000 Pixel für den Haupt- oder Präsentationsbereich mit Vergrößerungsschaltfläche, 1000 Pixel für den Präsentationsbereich ohne Vergrößerungsschaltfläche.<br><br>Wenn ein verknüpftes Bild langsam aufgebaut wird, können Sie es in Ihre Story hochladen, um bessere Ergebnisse zu erzielen.",
       "tooltipDimension": "Der Wert kann in \"Px\" oder \"%\" angegeben werden",
       "tooltipDimension2": "Der Wert muss in \"Px\" angegeben werden",
       "lblPosition2Explain": "(Zuschneiden möglich)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Wird angehalten, wenn Leser zu einem anderen Ort navigiert",
       "unloadHelp": "Wenn die Webseite über Audio- oder Video-Medien verfügt, lassen Sie diese Option aktiviert, um die Wiedergabe dieses Inhalts zu beenden, wenn der Leser zu einem anderen Ort navigiert. Deaktivieren Sie sie, um beispielsweise die Wiedergabe eines Soundtracks fortzusetzen, während der Leser durch die Story blättert.<br />Wenn es sich bei der Webseite um eine Anwendung handelt, deaktivieren Sie diese Option, damit die Story nicht erneut geladen wird, wenn der Leser zu ihr zurückkehrt.",
       "embedProtocolLabel": "Seite über eine sichere Verbindung (HTTPS) laden",
-      "embedProtocolWarning1": "Wenn diese Seite nicht in Ihre Story geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Weitere Informationen</a>",
-      "embedProtocolWarning2": "Wenn diese Seite nicht in Ihre Story geladen werden kann, deaktivieren Sie diese Option, und versuchen Sie es erneut. Wenn die Seite trotzdem nicht geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Weitere Informationen</a>"
+      "embedProtocolWarning1": "Wenn diese Seite nicht in Ihre Story geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "embedProtocolWarning2": "Wenn diese Seite nicht in Ihre Story geladen werden kann, deaktivieren Sie diese Option, und versuchen Sie es erneut. Wenn die Seite trotzdem nicht geladen werden kann, kann sie aus Gründen der Websicherheit nicht eingebettet werden. Alternativ können Sie Ihrer Zusammenfassung einen Link hinzufügen, um die Seite in einer neuen Browser-Registerkarte zu öffnen.",
+      "learn": "Weitere Informationen",
+      "lblAltText": "Alternativer Text",
+      "placeholderAltText": "Geben Sie für sehbehinderte Leser eine Beschreibung dieser Medien ein...",
+      "tooltipAltText": "Stellen Sie eine Beschreibung dieses Medieninhalts bereit, der von Hilfstechnologien wie Sprachausgabe-Software verwendet wird. Eine Beschreibung ist optional, wird jedoch empfohlen, um den Richtlinien für barrierefreie Webinhalte gemäß WCAG und Abschnitt 508 zu entsprechen."
     },
     "editorActionGeocode": {
       "lblTitle": "Adresse oder Ort suchen",
       "mapMarkerExplain": "Beim Klicken auf den Link wird ein Karten-Marker angezeigt"
     },
     "editorActions": {
-      "navigate": "Zu einem Abschnitt navigieren",
+      "navigate": "Zu einem anderen Abschnitt navigieren",
       "remove": "Aktion entfernen",
       "preview": "Vorschau der Aktion anzeigen"
     },

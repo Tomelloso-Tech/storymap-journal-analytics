@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Tautan halaman web",
       "lblEmbed": "Kode tanam",
+      "lblMustUseHTTPS": "Tautan ke konten web harus diawali dengan HTTPS",
       "lblOR": "ATAU",
       "lblError1": "Kesalahan, hapus salah satu bidang masukan.",
       "lblError2": "Kode tanam hanya dapat berisi satu %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Tautan gambar",
       "lblURLPH": "Tautan harus diakhiri dengan .jpg, .png, .gif, atau .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Gambar ini tampak tidak valid. Tentukan tautan langsung ke file gambar (URL biasanya akan berakhir dengan .jpg or .png). Menautkan ke halaman web yang berisikan gambar tidak akan bekerja.",
+      "lblURLErrorHTTPS": "Tautan gambar ini tidak valid. URL harus dimulai dengan HTTPS dan diakhiri dengan ekstensi file gambar yang didukung (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Memeriksa gambar...",
       "lblLabel": "Keterangan gambar",
       "lblLabel1": "Keterangan",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Sesuai",
       "lblPosition4": "Rentang",
       "lblPosition5": "Kustom",
-      "lblURLHelp": "Untuk hasil terbaik, gambar harus kurang dari 400 KB. Gunakan gambar JPG terkompresi pada kualitas 80% dan lebar gambar yang disarankan: 2000 piksel untuk halaman utama atau panel narasi dengan tombol perbesar, 1000 piksel untuk panel narasi tanpa tombol perbesar.<br><br>Jika gambar yang ditautkan lambat, unggahlah ke cerita Anda untuk mendapatkan hasil yang lebih baik.",
+      "lblURLHelp": "Tautan harus diawali dengan HTTPS.<br><br>Untuk hasil terbaik, gambar harus kurang dari 400 KB. Gunakan gambar JPG terkompresi pada kualitas 80% dan lebar gambar yang disarankan: 2000 piksel untuk halaman utama atau panel narasi dengan tombol perbesar, 1000 piksel untuk panel narasi tanpa tombol perbesar.<br><br>Jika gambar yang ditautkan lambat, unggahlah ke cerita Anda untuk mendapatkan hasil yang lebih baik.",
       "tooltipDimension": "Nilai dapat ditentukan di 'px' atau '%'",
       "tooltipDimension2": "Nilai harus ditentukan di 'px'",
       "lblPosition2Explain": "(dapat dipangkas)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Keluarkan saat pembaca beralih",
       "unloadHelp": "Jika halaman web memiliki media audio atau video, centang opsi ini untuk menghentikan konten tersebut agar tidak diputar saat pembaca beralih. Hapus centang misalnya untuk tetap memutar musik latar selagi pembaca membaca cerita.<br />Jika halaman web merupakan aplikasi, hapus centang pada opsi ini sehingga cerita tidak dimuat ulang saat pembaca kembali membacanya.",
       "embedProtocolLabel": "Muat halaman melalui koneksi aman (HTTPS)",
-      "embedProtocolWarning1": "Jika halaman ini tidak dimuat dalam cerita Anda, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Pelajari selengkapnya</a>",
-      "embedProtocolWarning2": "Jika halaman ini tidak dimuat dalam cerita Anda, batalkan centang opsi ini dan coba lagi. Jika halaman tetap tidak dimuat, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Pelajari selengkapnya</a>"
+      "embedProtocolWarning1": "Jika halaman ini tidak dimuat dalam cerita Anda, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru.",
+      "embedProtocolWarning2": "Jika halaman ini tidak dimuat dalam cerita Anda, batalkan centang opsi ini dan coba lagi. Jika halaman tetap tidak dimuat, halaman ini tidak dapat disematkan untuk alasan keamanan web. Sebagai alternatif, tambahkan tautan di narasi Anda untuk membuka halaman di tab browser baru.",
+      "learn": "Pelajari selengkapnya",
+      "lblAltText": "Teks Alternatif",
+      "placeholderAltText": "Masukkan deskripsi media ini untuk pembaca tunanetra...",
+      "tooltipAltText": "Berikan deskripsi tentang konten media ini yang akan digunakan oleh teknologi pembantu seperti perangkat lunak pembaca layar. Penjelasan bersifat opsional, namun direkomendasikan untuk memenuhi pedoman aksesibilitas web seperti WCAG dan Bagian 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Temukan alamat atau tempat",
       "mapMarkerExplain": "Pengguna akan melihat penanda peta saat mengeklik tautan"
     },
     "editorActions": {
-      "navigate": "Navigasi ke sebuah bagian",
+      "navigate": "Bernavigasilah ke bagian lain",
       "remove": "Buang tindakan",
       "preview": "Pratinjau tindakan"
     },

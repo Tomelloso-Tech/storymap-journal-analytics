@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "סגור"
+      "close": "סגור",
+      "focusMainstage": "שלח פוקוס של המקלדת למדיה",
+      "expandImage": "הרחב תמונה"
+    },
+    "a11y": {
+      "skipToContent": "דלג לנרטיב",
+      "headerAria": "כותרת של הסיפור",
+      "panelAria": "נרטיב של הסיפור",
+      "mainStageAria": "מדיה של הסיפור הנוכחי",
+      "logoLinkAria": "קישור ללוגו",
+      "toTop": "עבור לתחילת הנרטיב",
+      "focusContent": "חזור לנרטיב",
+      "navAria": "חלקי הסיפור",
+      "navPreviousAria": "החלק הקודם",
+      "navNextAria": "החלק הבא",
+      "toSectionAria": "עבור לחלק %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "קבוצת החלקים הבאה (%SECTION_RANGE%)",
+      "toPrevGroupAria": "קבוצת החלקים הקודמת (%SECTION_RANGE%)",
+      "loadingAria": "תוכן הסיפור נמצא בטעינה"
     },
     "loading": {
       "step1": "טוען סיפור",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "זה לא זמין במצב ניגון אוטומטי",
       "notshared": "הסיפור לא משותף"
     },
-    "overviewFromCommon": {
-      "title": "מפת התמצאות"
-    },
-    "legendFromCommon": {
-      "title": "מקרא"
+    "mapFromCommon": {
+      "overview": "מפת התמצאות",
+      "legend": "מקרא",
+      "home": "התמקד לדף הבית"
     },
     "shareFromCommon": {
       "copy": "העתק",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "כאשר מצב זה פעיל, קיימים פקדים להפעלה/הפסקה של הסיפור ולהתאמת מהירות הניווט.",
       "linksupdated": "הקישורים התעדכנו!",
       "print": "הדפס",
-      "printInstruction1": "המתן עד שכל התוכן ייטען בטרם מדפיס דף זה.",
-      "printInstruction1a": "יתכן שחלק מהתוכן לא יודפס אלא אם תפעיל את האפשרות \"הדפס צבעי רקע ותמונות\" בדיאלוג 'הגדרות דף להדפסה'",
+      "printInstruction1": "לפני שתדפיס, המתן שהסיפור ייטען במלואו",
+      "printInstruction1a": "אם הדף נטען באיטיות או אם מדיה כלשהי לא מופיעה, נסה להדפיס קטעים בטווח קטן יותר.",
+      "printInstruction1b": "לקבלת התוצאות הטובות ביותר, ייתכן שתצטרך להפעיל הדפסה של רכיבים ברקע בהגדרות ההדפסה של הדפדפן שלך.",
       "printInstruction2": "אין אפשרות לשתף דף זה עם אחרים, במקום זאת שתף את הקישור ${link}",
       "link": "קישור לסיפור",
+      "optionsHeader": "אפשרויות",
       "printOptPageBreak": "התחל כל קטע בדף חדש",
       "makeTextBlack": "הפוך את כל הטקסט לשחור",
-      "printWarning": "זוהי גרסה להדפסה של מפת סיפור. תוכן דינמי כגון סרטוני וידיאו ומפות אינטראקטיביות זמינים רק בגרסה מקוונת ב- ${link}",
+      "showLinks": "הצג כתובות URL של קישורים",
+      "madeWith": "סיפור זה נוצר עם ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "חוברת מפת הסיפור של Esri",
+      "readItOnline": "קרא את הגרסה האינטראקטיבית באינטרנט, בכתובת ${link}.",
       "printMSWarning": "קישור זמין רק בסיפור מקוון",
-      "printVideoWarning": "ניתן לצפות בסרטון וידיאו זה בגרסה המקוונת של מפת סיפור זו"
+      "printVideoWarning": "ניתן לצפות בסרטון וידיאו זה בגרסה המקוונת של מפת סיפור זו",
+      "printRangeHeader": "הדפס חלק מסיפור זה",
+      "sectionLabel": "קטעים:",
+      "apply": "בצע",
+      "resetRange": "אפס את כל הסיפור"
     }
   }
 });

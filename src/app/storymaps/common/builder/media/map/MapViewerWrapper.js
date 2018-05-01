@@ -5,7 +5,7 @@ define([
 		MapViewerWrapperUtils
 	) {
 		var CONFIG = {
-			mapViewerOpt: 'embedded=1&hide=bm,share,save,analysis,directions,measure'
+			mapViewerOpt: 'embedded=1&hide=share,save,analysis,directions,measure'
 		};
 
 		//
@@ -167,11 +167,13 @@ define([
 			function receiveMessage(event)
 			{
 				if ( event.origin !== MapViewerWrapperUtils.getPortalDomain() ) {
-					console.log("MV ignored a message from another domain:", event.origin, event.data);
 					return;
 				}
 
-				var json = JSON.parse(event.data);
+				var json = _.isString(event.data) ? JSON.parse(event.data) : event.data;
+				if (!json || !json.type) {
+					return;
+				}
 				console.log("MV received", json);
 
 				switch (json.type) {

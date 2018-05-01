@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "Zavřít"
+      "close": "Zavřít",
+      "focusMainstage": "Poslat fokus klávesnice na média",
+      "expandImage": "Rozbalit obraz"
+    },
+    "a11y": {
+      "skipToContent": "Přeskočit na vyprávění",
+      "headerAria": "Záhlaví příběhu",
+      "panelAria": "Vyprávění příběhu",
+      "mainStageAria": "Aktuální média části příběhu",
+      "logoLinkAria": "Odkaz na logo",
+      "toTop": "Přejít na začátek vyprávění",
+      "focusContent": "Vrátit se na vyprávění",
+      "navAria": "Části příběhu",
+      "navPreviousAria": "Předchozí část",
+      "navNextAria": "Další část",
+      "toSectionAria": "Přejít na část %SECTION_NUMBER%: %SECTION_TITLE%",
+      "toNextGroupAria": "Další skupina částí (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Předchozí skupina částí (%SECTION_RANGE%)",
+      "loadingAria": "Načítá se obsah příběhu"
     },
     "loading": {
       "step1": "Načítání příběhu",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Není k dispozici v režimu automatického přehrávání.",
       "notshared": "Příběh není sdílen"
     },
-    "overviewFromCommon": {
-      "title": "Mapa přehledu"
-    },
-    "legendFromCommon": {
-      "title": "Legenda"
+    "mapFromCommon": {
+      "overview": "Přehledová mapa",
+      "legend": "Legenda",
+      "home": "Výchozí přiblížení"
     },
     "shareFromCommon": {
       "copy": "Kopírovat",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "Je-li tento režim aktivní, budou k dispozici ovládací prvky ke spuštění/pozastavení přehrávání příběhu a k nastavení rychlosti procházení.",
       "linksupdated": "Odkazy aktualizovány!",
       "print": "Tisk",
-      "printInstruction1": "Před vytisknutím této stránky počkejte, než se načte všechen obsah.",
-      "printInstruction1a": "Některý obsah se nemusí vytisknout, pokud neaktivujete volbu „Tisknout obrázky a barvy pozadí“ v dialogovém okně nastavení tisknuté stránky.",
+      "printInstruction1": "Před tiskem prosím počkejte, dokud nedojde k načtení celého příběhu",
+      "printInstruction1a": "Pokud se stránka načítá pomalu nebo se některá média nezobrazují, zkuste tisknout menší část příběhu.",
+      "printInstruction1b": "Abyste dosáhli co nejlepších výsledků, možná bude třeba povolit tisk prvků pozadí v nastavení tisku ve vašem prohlížeči.",
       "printInstruction2": "Tuto stránku nelze sdílet s ostatními, sdílejte místo toho ${link}.",
       "link": "odkaz na příběh",
+      "optionsHeader": "Možnosti",
       "printOptPageBreak": "Zahajte každou sekci na nové straně",
       "makeTextBlack": "Zobrazit veškerý text černě",
-      "printWarning": "Toto je tištěná verze mapy s příběhem. Dynamický obsah, jako jsou videa a interaktivní mapy, je k dispozici pouze v online verzi na adrese ${link}.",
+      "showLinks": "Zobrazit odkazy URL",
+      "madeWith": "Tento příběh byl vytvořen pomocí ${JOURNAL_LINK_TEXT}.",
+      "journalLinkText": "Deník mapy s příběhem od společnosti Esri",
+      "readItOnline": "Přečtěte si interaktivní verzi příběhu na ${link}.",
       "printMSWarning": "odkaz je k dispozici pouze v online příběhu",
-      "printVideoWarning": "Toto video lze zobrazit v online verzi této mapy s příběhem."
+      "printVideoWarning": "Toto video lze zobrazit v online verzi této mapy s příběhem.",
+      "printRangeHeader": "Vytisknout část příběhu",
+      "sectionLabel": "Části:",
+      "apply": "Použít",
+      "resetRange": "Zvolit celý příběh"
     }
   }
 });

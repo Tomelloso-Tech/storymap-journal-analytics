@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Länk till webbsida",
       "lblEmbed": "Bädda in kod",
+      "lblMustUseHTTPS": "Länkar till webbinnehåll måste börja med HTTPS",
       "lblOR": "ELLER",
       "lblError1": "Fel, rensa ett av de båda inmatningsfälten.",
       "lblError2": "Inbäddad kod kan endast innehålla en %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Bildlänk",
       "lblURLPH": "Länken bör sluta med .jpg, .png, .gif eller .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Den här bilden verkar inte vara giltig. Ange en direktlänk till en bildfil (din URL slutar vanligtvis med en .jpg eller .png). Länkar till en webbsida som innehåller en bild fungerar inte.",
+      "lblURLErrorHTTPS": "Den här bildlänken är inte giltig. URL:en måste börja med HTTPS och sluta med ett bildfilstillägg som stöds (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Kontrollerar bild ...",
       "lblLabel": "Bildtext",
       "lblLabel1": "Bildtext",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Anpassa",
       "lblPosition4": "Sträck",
       "lblPosition5": "Anpassad",
-      "lblURLHelp": "För bästa resultat bör bilderna vara mindre än 400 kB. Använd komprimerade JPG-bilder vid 80 % kvalitet och följande rekommenderade bildbredder: 2 000 pixlar för huvudscenen och berättelsepaneler med knappen Maximera, eller 1 000 pixlar för berättelsepaneler utan knappen Maximera.<br><br>Om en länkad bild är långsam kan du överföra den till din berättelse för bättre resultat.",
+      "lblURLHelp": "Bildlänken måste börja med HTTPS.<br><br>För bästa resultat bör bilderna vara mindre än 400 kB. Använd komprimerade JPG-bilder vid 80 % kvalitet och följande rekommenderade bildbredder: 2 000 pixlar för huvudscenen och berättelsepaneler med knappen Maximera, eller 1 000 pixlar för berättelsepaneler utan knappen Maximera.<br><br>Om en länkad bild ritas långsamt kan du överföra den till din berättelse för bättre resultat.",
       "tooltipDimension": "Värdet kan anges i \"px\" eller \"%\"",
       "tooltipDimension2": "Värdet måste anges i \"px\"",
       "lblPosition2Explain": "(kan beskäras)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Ta bort när användaren navigerar vidare",
       "unloadHelp": "Om webbsidan innehåller ljud- eller videomedia behåller du det här alternativet markerat så att innehållet inte spelas när användaren navigerar vidare. Avmarkera det till exempel om du vill att ett ljudspår ska spelas när användaren bläddrar vidare genom berättelsen.<br />Om webbplatsen är en applikation avmarkerar du alternativet så att berättelsen inte läses in på nytt om användaren återvänder till den.",
       "embedProtocolLabel": "Läs in sidan via en säker anslutning (HTTPS)",
-      "embedProtocolWarning1": "Om sidan inte läses in till din berättelse kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Läs mer</a>",
-      "embedProtocolWarning2": "Om sidan inte läses in till din berättelse avmarkerar du alternativet och försöker igen. Om sidan fortfarande inte läses in kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Läs mer</a>"
+      "embedProtocolWarning1": "Om sidan inte läses in till din berättelse kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik.",
+      "embedProtocolWarning2": "Om sidan inte läses in till din berättelse avmarkerar du alternativet och försöker igen. Om sidan fortfarande inte läses in kan den inte bäddas in av webbsäkerhetsskäl. Som ett alternativ kan du lägga till en länk i din berättelse för att öppna sidan på en ny webbläsarflik.",
+      "learn": "Läs mer",
+      "lblAltText": "Alternativ text",
+      "placeholderAltText": "Ange en beskrivning av mediematerialet för personer med nedsatt syn…",
+      "tooltipAltText": "Ange en beskrivning av det här medieinnehållet som ska användas av hjälpteknik som skärmläsarprogramvara. Beskrivningen är valfri men rekommenderas för följande av riktlinjer för tillgänglighet på webben som WCAG och Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Hitta en adress eller plats",
       "mapMarkerExplain": "Användare ser en kartmarkör när de klickar på länken"
     },
     "editorActions": {
-      "navigate": "Navigera till en sektion",
+      "navigate": "Navigera till ett annat avsnitt",
       "remove": "Ta bort åtgärd",
       "preview": "Förhandsgranska åtgärd"
     },

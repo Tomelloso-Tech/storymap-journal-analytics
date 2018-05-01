@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Vínculo de la página Web",
       "lblEmbed": "Integrar código",
+      "lblMustUseHTTPS": "Los vínculos a contenido web deben comenzar por HTTPS",
       "lblOR": "O BIEN",
       "lblError1": "Error, borre uno de los campos de entrada.",
       "lblError2": "El código integrado solo puede contener un %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Vínculo de la imagen",
       "lblURLPH": "El vínculo debe finalizar con .jpg, .png, .gif o .bmp",
+      "lblURLPHHTTPS": "https://www.ejemplo.com/imagen.jpg",
       "lblURLError": "Esta imagen no parece ser válida. Especifica un vínculo directo a un archivo de imagen (normalmente, la URL termina en .jpg o .png). Los vínculos a una página web que contenga una imagen no funcionarán.",
+      "lblURLErrorHTTPS": "Este vínculo de imagen no es válido. La URL debe comenzar por HTTPS y acabar en una extensión de archivo de imagen compatible (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Comprobando imagen...",
       "lblLabel": "Título de la imagen",
       "lblLabel1": "Leyenda",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Ajustar",
       "lblPosition4": "Estirar",
       "lblPosition5": "Personalizada",
-      "lblURLHelp": "Para obtener unos resultados óptimos, las imágenes deben ser de menos de 400 KB. Use imágenes JPG comprimidas con una calidad del 80 % y estos anchos de imagen recomendados: 2000 píxeles para el escenario principal o el panel narrativo con el botón de maximizar y 1000 píxeles para el panel narrativo sin el botón de maximizar.<br><br>Si una imagen vinculada se dibuja lentamente, cárguela en su historia para obtener unos resultados óptimos.",
+      "lblURLHelp": "El vínculo de la imagen debe comenzar por HTTPS.<br><br>Para obtener unos resultados óptimos, las imágenes deben tener menos de 400 KB. Use imágenes JPG comprimidas con una calidad del 80 % y estos anchos de imagen recomendados: 2000 píxeles para el escenario principal o el panel narrativo con el botón de maximizar y 1000 píxeles para el panel narrativo sin el botón de maximizar.<br><br>Si una imagen vinculada se dibuja lentamente, cárguela en su historia para obtener unos resultados óptimos.",
       "tooltipDimension": "El valor se puede especificar en 'px' o en '%'",
       "tooltipDimension2": "El valor se debe especificar en 'px'",
       "lblPosition2Explain": "(puede recortarse)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Detener cuando el lector abandone la sección",
       "unloadHelp": "Si la página Web incluye contenido multimedia de audio o vídeo, deje activada esta opción para evitar que el contenido se reproduzca cuando el lector se mueva. Desactive la opción, por ejemplo, para que la pista de audio se siga reproduciendo a medida que el lector avanza por la historia.<br />Si la página Web es una aplicación, desactive la opción para que la historia no se vuelva a cargar si el lector regresa a ella.",
       "embedProtocolLabel": "Cargue la página a través de una conexión de Internet segura (HTTPS)",
-      "embedProtocolWarning1": "Si esta página no se carga en su historia, no se puede incorporar por motivos de seguridad web. Como alternativa, agregue un vínculo en su narración para abrir la página en una nueva pestaña del navegador. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Más información</a>",
-      "embedProtocolWarning2": "Si esta página no se carga en su historia, desactive esta opción e inténtelo de nuevo. Si la página sigue sin cargarse, no se puede incorporar por motivos de seguridad web. Como alternativa, agregue un vínculo en su narración para abrir la página en una nueva pestaña del navegador. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Más información</a>"
+      "embedProtocolWarning1": "Si esta página no se carga en su historia, no se puede integrar por motivos de seguridad web. Como alternativa, agregue un vínculo en su narrativa para abrir la página en una nueva pestaña de navegador.",
+      "embedProtocolWarning2": "Si esta página no se carga en su historia, desactive esta opción e inténtelo de nuevo. Si la página sigue sin cargarse, no se puede integrar por motivos de seguridad web. Como alternativa, agregue un vínculo en su narración para abrir la página en una nueva pestaña de navegador.",
+      "learn": "Más información",
+      "lblAltText": "Texto alternativo",
+      "placeholderAltText": "Introduzca una descripción del contenido multimedia para invidentes...",
+      "tooltipAltText": "Proporcione una descripción del contenido multimedia. Esta será utilizada por tecnologías de asistencia, tales como software de lectura de pantalla. La descripción es opcional, pero recomendada para satisfacer las directrices de accesibilidad web, por ejemplo, WCAG y Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Buscar una dirección o un lugar",
       "mapMarkerExplain": "El usuario verá un marcador de mapa al hacer clic en el vínculo"
     },
     "editorActions": {
-      "navigate": "Navegar a una sección",
+      "navigate": "Navegar a otra sección",
       "remove": "Quitar acción",
       "preview": "Previsualizar acción"
     },

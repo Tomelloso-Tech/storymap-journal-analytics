@@ -19,7 +19,7 @@
 		-->
 		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
 
-		<!-- Facebook sharing -->
+		<!-- Social sharing -->
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
@@ -66,8 +66,8 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.11.0',
-				pathJSAPI: 'https://js.arcgis.com/3.21/'
+				version: '1.14.2',
+				pathJSAPI: 'https://js.arcgis.com/3.24/'
 			};
 		</script>
 		<noscript>
@@ -84,6 +84,7 @@
 
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
+		<button class="skip-to-content visible-on-focus"></button>
 
 		<!-- Content -->
 		<div id="contentPanel" class="mobileView">
@@ -95,26 +96,30 @@
 							<div class="navDots vertical">
 								<!-- navigation dots -->
 							</div>
-							<div class="header" aria-hidden="true">
+							<div class="header" role="banner">
 								<div class="linkSocialContainer">
 									<span class="linkContainer"></span>
 									<span class="shareBtns">
-										<i class="shareIcon blackHover share_facebook icon-facebook-squared" tabindex="-1"></i>
-										<i class="shareIcon blackHover share_twitter icon-twitter" tabindex="-1"></i>
-										<i class="shareIcon blackHover share_bitly icon-link" tabindex="-1"></i>
-										<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+										<button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
+										<button class="shareIcon blackHover share_twitter icon-twitter"></button>
+										<button class="shareIcon blackHover share_bitly icon-link"></button>
+										<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 									</span>
 								</div>
 								<table class="logoContainer">
 									<tr>
 										<td class="logoWrapper">
-											<a class="logoLink" target="_blank" tabindex="-1">
-												<img class="logoImg"/>
+											<a class="logoLink" target="_blank">
+												<img class="logoImg" />
 											</a>
 										</td>
 									</tr>
 								</table>
 							</div>
+							<!-- <div class="resizer"></div> -->
+							<button class="scroll" tabindex="-1">
+								<div class="scrollInner" data-toggle="tooltip"></div>
+							</button>
 							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
 							<span class="error-status">
 								<button class="btn btn-xs btn-warning check-story"></button>
@@ -125,8 +130,11 @@
 								<div class="panelEditBtn">
 									<div class="panelEditBtnInner"></div>
 								</div>
-								<div class="sections">
+								<div class="sections" role="main">
 									<!-- sections injected here -->
+								</div>
+								<div class="centering loop-wrapper">
+									<button class="visible-on-focus loop-to-top"></button>
 								</div>
 							</div>
 							<div class="builder builder-content-panel">
@@ -139,29 +147,25 @@
 									<div class="builder-lbl"></div>
 								</div>
 							</div>
-							<!-- <div class="resizer"></div> -->
-							<div class="scroll">
-								<div class="scrollInner" data-toggle="tooltip"></div>
-							</div>
 							<div class="builder-mask"></div>
 							<div class="firstAddExplain"></div>
 						</div>
 					</td>
 					<!-- Map -->
-					<td id="mainStagePanel" tabindex="1">
+					<td id="mainStagePanel" class="mainStagePanel" role="complementary">
 						<div id="mainStagePanelInner">
 							<div class="medias">
 								<!-- Maps and media injected here -->
 							</div>
 							<div id="mainStageLoadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
-							  <img src="resources/tpl/viewer/icons/loading-light.gif" alt="This content is loading."/>
+							  <img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
 							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer">
-								<div class="backButton">
+								<button class="backButton">
 									<div class="backArrow"></div>
 									<span class="backLbl"></span>
-								</div>
+								</button>
 							</div>
 							<!-- Builder -->
 							<div id="builderQuotes" class="centerAlignOnFloat"></div>
@@ -179,20 +183,20 @@
 
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
-			<div class="header" aria-hidden="true">
+			<div class="header" role="banner">
 				<div class="linkSocialContainer">
 					<span class="linkContainer"></span>
 					<span class="shareBtns">
-						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
-						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
-						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
-						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+						<button class="shareIcon blackHover share_facebook icon-facebook-squared"></button>
+						<button class="shareIcon blackHover share_twitter icon-twitter"></button>
+						<button class="shareIcon blackHover share_bitly icon-link"></button>
+						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 					</span>
 				</div>
 				<table class="logoContainer">
 					<tr>
 						<td class="logoWrapper">
-							<a class="logoLink" target="_blank" tabindex="-1">
+							<a class="logoLink" target="_blank">
 								<img class="logoImg"/>
 							</a>
 						</td>
@@ -210,8 +214,11 @@
 			</div>
 			<div class="sections">
 				<div class="swiper-container">
-					<div class="swiper-wrapper">
+					<div class="swiper-wrapper" role="main">
 						<!-- sections injected here -->
+					</div>
+					<div class="centering loop-wrapper">
+						<button class="visible-on-focus loop-to-top"></button>
 					</div>
 				</div>
 			</div>
@@ -228,9 +235,9 @@
 			<div class="navDots vertical">
 				<!-- navigation dots -->
 			</div>
-			<div class="scroll">
+			<button class="scroll" tabindex="-1">
 				<div class="scrollInner" data-toggle="tooltip"></div>
-			</div>
+			</button>
 			<div class="builder-mask"></div>
 			<div class="firstAddExplain"></div>
 		</div>
@@ -272,10 +279,7 @@
 				width: 100%;
 				height: 100%;
 				overflow: hidden;
-				background-color: #E5E5E5;
-				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
-				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
-				box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+				background-color: #EFEFEF;
 			}
 
 			@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
@@ -316,7 +320,7 @@
 
 		<div id="loadingOverlay"></div>
 		<div id="loadingIndicator" class="loadingIndicator" role="alert" aria-live="polite">
-			<img src="resources/tpl/viewer/icons/loading-light.gif" alt="This story map is loading."/>
+			<img class="loadingGif" src="resources/tpl/viewer/icons/loading-light.gif"/>
 		</div>
 		<div id="loadingMessage"></div>
 

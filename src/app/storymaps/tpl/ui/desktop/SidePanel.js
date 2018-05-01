@@ -85,7 +85,10 @@ define(["lib-build/tpl!./SidePanelSection",
 					}, 0);
 				}, 0);
 
-				if ( ! app.isInBuilder && app.userCanEdit && has("ie") != 9 && ! CommonHelper.getUrlParams().preview ) {
+				var urlParams = CommonHelper.getUrlParams();
+				var isPreview = (urlParams.preview === 'true' || urlParams.preview === '');
+				var isAutoplay = (urlParams.autoplay === 'true' || urlParams.autoplay === '');
+				if ( ! app.isInBuilder && app.userCanEdit && has("ie") != 9 && !isPreview && !isAutoplay) {
 					container.find('.error-status').addClass('enabled');
 					topic.subscribe("MYSTORIES_SCAN", updateErrorStatus);
 					updateErrorStatus("start");
@@ -193,6 +196,13 @@ define(["lib-build/tpl!./SidePanelSection",
 				}
 			};
 
+			this.focusSection = function(index) {
+				if (!index && index !== 0) {
+					index = _activeSectionIndex;
+				}
+				container.find('.section').eq(index).find('.title').focus();
+			};
+
 			this.getSectionNumber = function()
 			{
 				return _activeSectionIndex;
@@ -206,7 +216,7 @@ define(["lib-build/tpl!./SidePanelSection",
 			this.toggleSwitchBuilderButton = function(state)
 			{
 				var switchBuilderBtn = container.find('.switchBuilder')
-					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
+					.html('<span aria-hidden="true" class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
 					.off('click')
 					.click(CommonHelper.switchToBuilder)
 					.toggle(state);
@@ -237,6 +247,17 @@ define(["lib-build/tpl!./SidePanelSection",
 			this.toggleSocialBtnAppSharing = function(disable)
 			{
 				HeaderHelper.toggleSocialBtnAppSharing(container, disable);
+			};
+
+			this.attachTabEvents = function() {
+				container.find('button,a')
+					.on('focus', function() {
+						var parentSection = $(this).parents('.section');
+						if (!parentSection.length) {
+							return;
+						}
+						onTabToSection(parentSection[0], this);
+					});
 			};
 
 			function setLayout(layoutOptions)
@@ -299,38 +320,6 @@ define(["lib-build/tpl!./SidePanelSection",
 						$(this).removeData("mouseDown");
 					});
 
-				// Find the last entry header or "element" of it's description
-				var lastTabElement = titles.last();
-				if( lastTabElement.siblings(".content").find("[tabindex=0]").length )
-					lastTabElement = lastTabElement.siblings(".content").find("[tabindex=0]").last();
-
-				// Tab on the last element has to navigate to the header
-				lastTabElement.on('keydown', function(e) {
-					if( e.keyCode === 9 && ! e.shiftKey ) {
-						// Focus out when embedded
-						if (window != window.top) {
-							return true;
-						}
-
-						container.find(".header").removeAttr("aria-hidden");
-
-						if ( ! container.find(".header .linkContainer a").length )
-							container.find(".header .linkContainer").attr("tabindex", "0");
-						else
-							container.find(".header .linkContainer a").attr("tabindex", "0");
-
-						container.find(".header .shareIcon").attr("tabindex", "0");
-
-						if ( container.find(".header .linkContainer a").length )
-							container.find(".header .linkContainer a")[0].focus();
-						else if ( container.find(".header .linkContainer").length )
-							container.find(".header .linkContainer")[0].focus();
-						else if ( container.find(".header .shareIcon:visible").length )
-							container.find(".header .shareIcon")[0].focus();
-
-						return false;
-					}
-				});
 			}
 
 			function createSectionBlock(/*editEl,*/ index, status, content, title)
@@ -351,7 +340,9 @@ define(["lib-build/tpl!./SidePanelSection",
 					title: StoryText.prepareEditorContent(title),
 					content: StoryText.prepareEditorContent(content, true),
 					lblShare: i18n.viewer.headerFromCommon.share,
-					shareURL: shareURL
+					lblMainstageBtn: i18n.viewer.common.focusMainstage,
+					shareURL: shareURL,
+					titleTag: index === 0 ? 'h1' : 'h2'
 				});
 			}
 
@@ -376,7 +367,7 @@ define(["lib-build/tpl!./SidePanelSection",
 					.click(function(){
 						container.find(".scroll .tooltip").remove();
 						removeScrollInvite();
-						container.find('.sections').scrollTop(400);
+						container.find('.sections').animate({scrollTop: '300px'});
 					})
 					.on('mousewheel', function(){
 						container.find(".scroll .tooltip").remove();
@@ -391,17 +382,43 @@ define(["lib-build/tpl!./SidePanelSection",
 
 				_this.showSectionNumber(index, true, false);
 				navigationCallback(index);
+				// TODO: was wrapped in a timeout for last patch Dec 2017. internal bug 1086.
+				// find a better way to do this that doesn't involve a timeout.
+				// floatingpanel seems to not have this problem.
+				setTimeout(function() {
+					_this.focusSection(index);
+				}, 200);
 			}
 
-			function onClickSection()
+			function onClickSection(evt)
 			{
+
 				var index = $(this).index();
 
-				if ( _activeSectionIndex == index )
+				if (_activeSectionIndex == index) {
 					return;
+				}
+
+				// we got here from a triggered focus event.
+				// which means the showSectionNumber and navigationCallback
+				// would be duplicates. so skip them.
+				if (evt && evt.isTrigger) {
+					return;
+				}
 
 				_this.showSectionNumber(index);
 				navigationCallback(index);
+			}
+
+			function onTabToSection(section) {
+				var index = $(section).index();
+
+				if (index >= _activeSectionIndex) {
+					onClickSection.bind(section)();
+				} else {
+					_this.showSectionNumber(index, false, true);
+					navigationCallback(index);
+				}
 			}
 
 			function onScroll()
@@ -419,29 +436,34 @@ define(["lib-build/tpl!./SidePanelSection",
 				// Shouldn't be displayed?
 				removeScrollInvite();
 
-				if(scrollingContainerTop === 0)
+				if (scrollingContainerTop === 0) {
 					newSectionIndex = 0;
-				else {
+				} else {
 					// TODO!
 					var firstMatchingSectionIndex = -1,
 						lastSectionTopPosition = -1;
 
 					container.find(".section").each(function(){
 						var sectionPos = $(this).position().top;
-						if ( sectionPos < scrollingContainerHeight / 2.5 )
+						if ( sectionPos < scrollingContainerHeight / 2.5 ) {
 							firstMatchingSectionIndex = $(this).index();
+						}
 
 						lastSectionTopPosition = sectionPos;
 					});
 
-					if ( Math.round(lastSectionTopPosition + container.find(".section").last().outerHeight()) == scrollingContainerHeight )
+					if ( Math.round(lastSectionTopPosition + container.find(".section").last().outerHeight()) == scrollingContainerHeight ) {
 						newSectionIndex = container.find(".section").length - 1;
-					else if ( firstMatchingSectionIndex == -1 && lastSectionTopPosition > 0 )
+					}
+					else if ( firstMatchingSectionIndex == -1 && lastSectionTopPosition > 0 ) {
 						newSectionIndex = 0;
-					else if ( firstMatchingSectionIndex == -1 )
+					}
+					else if ( firstMatchingSectionIndex == -1 ) {
 						newSectionIndex = container.find(".section").length - 1;
-					else
+					}
+					else {
 						newSectionIndex = firstMatchingSectionIndex;
+					}
 				}
 
 				if ( newSectionIndex != _activeSectionIndex ){
@@ -543,8 +565,9 @@ define(["lib-build/tpl!./SidePanelSection",
 					tooltipFontColor: colors.panel
 				});
 				container.css("background-color", colors.panel);
+				var transparentPanel = CommonHelper.getRgba(colors.panel, 0.001);
 				container.find('.scroll').css({
-					'background': 'linear-gradient(transparent, ' + colors.panel + ')'
+					'background': 'linear-gradient(' + transparentPanel + ', ' + colors.panel + ')'
 				});
 				container.find('.sections').css("color", colors.text);
 				container.find('.panelEditBtn').css("background-color", colors.panel);
@@ -591,6 +614,31 @@ define(["lib-build/tpl!./SidePanelSection",
 			function initEvents()
 			{
 				container.find('.sections').scroll(onScroll);
+				$('body').on('keydown', function(evt) {
+					$('body').off('keydown');
+					if ((evt.keyCode === 40 || evt.keyCode === 34) && $('.scroll').is(':visible')) {
+						$('.section .title').eq(0).focus();
+						container.find('.scroll').trigger('click');
+					}
+					$('body').on('keydown', function(e) {
+						if (e.keyCode === 9) {
+							$('body').addClass('user-is-tabbing');
+						}
+					});
+				});
+
+				// loop to top
+				container.find('.loop-to-top').on('click keydown', function(evt) {
+					if (evt.type === 'keydown') {
+						if (evt.keyCode === 9 && !evt.shiftKey) {
+							evt.preventDefault();
+						} else {
+							return;
+						}
+					}
+					_this.showSectionNumber(0);
+					_this.focusSection(0);
+				});
 
 				if ( isInBuilder )
 					container.find('.panelEditBtn').off('click').click(onClickEdit);

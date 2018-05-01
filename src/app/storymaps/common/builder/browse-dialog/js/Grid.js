@@ -34,7 +34,7 @@ define([
           "<div class='itemGrid'>" +
             "<img alt='' src='${thumbnailUrl:_formatThumbnail}'>" +
             "<div class='itemTitle'>${title:_formatTitle}</div>" +
-            "<span class='itemOwner'>${owner}</span>" +
+            "<div class='itemOwner'>${owner}</div>" +
             "<p class='itemText snippet' style='display:none;'>${snippet}</p>" +
           "</div>";
 
@@ -90,8 +90,8 @@ define([
           renderRow: this._renderers[this._view],
           store: this._store,
           query: this._query,
-          loadingMessage: "Loading...",
-          noDataMessage: "No results found",
+          loadingMessage: i18n.commonWebmap.selector.loadingResults,
+          noDataMessage: i18n.commonWebmap.selector.noResults,
           showLoadingMessage: true,
           firstLastArrows: this._pagingLinks,
           previousNextArrows: this._pagingLinks,

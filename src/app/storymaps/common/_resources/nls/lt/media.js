@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Tinklalapio nuoroda",
       "lblEmbed": "Įterpimo kodas",
+      "lblMustUseHTTPS": "Žiniatinklio turinio nuorodos turi prasidėti HTTPS",
       "lblOR": "ARBA",
       "lblError1": "Klaida, išvalykite vieną iš dviejų įvesties laukų.",
       "lblError2": "Įterpimo kode gali būti tik vienas %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Paveikslėlio nuoroda",
       "lblURLPH": "Nuoroda gali būti .jpg, .png, .gif arba .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Atrodo, kad šis paveikslėlis netinkamas. Pateikite tiesioginę nuorodą į paveikslėlio failą (URL paprastai turi baigtis .jpg arba .png). Nuorodos į tinklalapį, kuriame yra paveikslėlis, neveiks.",
+      "lblURLErrorHTTPS": "Ši paveikslėlio nuoroda negalioja. URL turi prasidėti HTTPS ir baigtis palaikomu failo plėtiniu (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Tikrinamas paveikslėlis...",
       "lblLabel": "Paveikslėlio antraštė",
       "lblLabel1": "Antraštė",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Talpinti",
       "lblPosition4": "Ištempti",
       "lblPosition5": "Adaptuota",
-      "lblURLHelp": "Jei norite geriausių rezultatų, vaizdai turi būti mažesni nei 400 KB. Naudokite suglaudintus JPG vaizdus 80 % kokybės ir tokių rekomenduojamų vaizdo pločių: 2 000 pikselių pagrindinėje srityje arba pasakojimo skydelyje su padidinimo mygtuku, 1 000 pikselių pasakojimo skydelyje be padidinimo mygtuko.<br><br>Jei susietas vaizdas piešiamas lėtai, norėdami geresnių rezultatų, įkelkite jį į savo pasakojimą.",
+      "lblURLHelp": "Paveikslėlio nuoroda turi prasidėti HTTPS.<br><br>Jei norite geriausių rezultatų, paveikslėliai turi būti mažesni nei 400 KB. Naudokite 80% kokybės suglaudintus JPG paveikslėlius ir tokių rekomenduojamų pločių: 2 000 pikselių pagrindinėje srityje arba pasakojimo skydelyje su padidinimo mygtuku, 1 000 pikselių pasakojimo skydelyje be padidinimo mygtuko.<br><br>Jei susietas paveikslėlis atvaizduojamas lėtai, norėdami geresnių rezultatų, įkelkite jį į savo pasakojimą.",
       "tooltipDimension": "Reikšmę galima nurodyti piks. arba %",
       "tooltipDimension2": "Reikšmę reikia nurodyti piks.",
       "lblPosition2Explain": "(gali būti apkarpoma)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Iškelti, kai skaitytojas palieka šią dalį",
       "unloadHelp": "Jeigu tinklalapyje yra garso arba vaizdo įrašų, palikite šią parinktį pažymėtą, kad sustabdytumėte turinio leidimą, kai skaitytojas išeina. Panaikinkite žymėjimą, jei norite leisti garso takelį, kai skaitytojas peržiūri pasakojimą.<br />Jeigu tinklalapis yra aplikacija, panaikinkite šios parinkties žymėjimą, kad skaitytojui grįžus, pasakojimas nebūtų įkeliamas iš naujo.",
       "embedProtocolLabel": "Įkelkite puslapį naudodami saugų ryšį (HTTPS)",
-      "embedProtocolWarning1": "Jei šis puslapis jūsų pasakojime neįkeliamas, jį galima įdėti interneto saugumo sumetimais. Arba pridėkite nuorodą savo pasakojime, kad atidarytumėte puslapį naujame naršyklės skirtuke. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Sužinokite daugiau</a>",
-      "embedProtocolWarning2": "Jei šis puslapis jūsų pasakojime neįkeliamas, atžymėkite šią parinktį ir bandykite dar kartą. Jei puslapis vis tiek neįkeliamas, jį galima įdėti interneto saugumo sumetimais. Arba pridėkite nuorodą savo pasakojime, kad atidarytumėte puslapį naujame naršyklės skirtuke. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Sužinokite daugiau</a>"
+      "embedProtocolWarning1": "Jei šis puslapis jūsų pasakojime neįkeliamas, tai yra daroma saugumo sumetimais. Kaip alternatyvą, pridėkite nuorodą savo pasakojime, kad atidarytumėte puslapį naujame naršyklės skirtuke.",
+      "embedProtocolWarning2": "Jei šis puslapis jūsų pasakojime neįkeliamas, atžymėkite šią parinktį ir bandykite dar kartą. Jei puslapis vis tiek neįkeliamas, tai yra daroma saugumo sumetimais. Kaip alternatyvą, pridėkite nuorodą savo pasakojime, kad atidarytumėte puslapį naujame naršyklės skirtuke.",
+      "learn": "Sužinokite daugiau",
+      "lblAltText": "Alternatyvus tekstas",
+      "placeholderAltText": "Įveskite šios medijos aprašą, skirtą skaitytojams su regos sutrikimais...",
+      "tooltipAltText": "Pateikite šio medijos turinio aprašą, kuris bus naudojamas neįgaliesiems pritaikytose technologijose, pvz., ekrano skaitytuvo programinėje įrangoje. Aprašas nėra privalomas, tačiau rekomenduojamas norint atitikti žiniatinklio pritaikymo neįgaliesiems gaires, pavyzdžiui, WCAG ir Section 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Raskite adresą arba vietą",
       "mapMarkerExplain": "Spustelėjęs nuorodą, vartotojas matys žemėlapio žymeklį"
     },
     "editorActions": {
-      "navigate": "Eiti į skiltį",
+      "navigate": "Eiti į kitą skiltį",
       "remove": "Pašalinti veiksmą",
       "preview": "Peržiūrėti veiksmą"
     },

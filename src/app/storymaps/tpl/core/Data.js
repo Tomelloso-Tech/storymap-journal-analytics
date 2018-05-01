@@ -254,6 +254,29 @@ define(["./WebApplicationData",
 				return this.getStorySections()[index];
 			};
 
+			// this adjusts the index of section navigation where people can request
+			// a specific section. the two specific cases that are currently using this
+			// function are for url params (?section=4) and for story action section navigation
+			// but in BUILDER, all sections are visible, so ignore this call.
+			this.getAdjustedIndex = function(index) {
+				if (app.isInBuilder) {
+					return index;
+				}
+				var adjustedIndex = index;
+				var allSections = WebApplicationData.getStorySections();
+				// do this until we get to the current index.
+				_.every(allSections || [], function(section, i){
+					if (i > index) {
+						return false;
+					}
+					if (section.status !== "PUBLISHED" || section.pubDate > Date.now()) {
+						adjustedIndex--;
+					}
+					return true;
+				});
+				return adjustedIndex;
+			};
+
 			this.getCurrentSection = function()
 			{
 				return WebApplicationData.getStorySections()[_currentStoryIndex];
@@ -356,6 +379,40 @@ define(["./WebApplicationData",
 
 				return webmaps;
 			};
+
+
+			/*
+			 * Get an array of webmap objects used in the journal (sections media and actions)
+			 */
+			this.getWebmapObjects = function()
+			{
+				// Story Main Stage webmaps
+				var webmaps = $.map(this.getStorySections(), function(section){
+					return section.media && section.media.type == "webmap" && section.media.webmap ? section.media.webmap : null;
+				});
+
+				// Story actions webmaps
+				$.each(this.getStorySections(), function(i, section){
+					if ( section.contentActions ) {
+						$.each(section.contentActions, function(j, action){
+							if ( action.type == "media" && action.media.webmap )
+								webmaps.push(action.media.webmap);
+						});
+					}
+				});
+
+				// Make the array unique
+				webmaps = $.grep(webmaps, function(webmap) {
+					var found = _.some(webmaps, function(wm) {
+						return webmap.id === wm.id && webmap.altText === wm.altText;
+					});
+					return found;
+				});
+
+				return webmaps;
+
+			};
+
 
 			/*
 			 * Get extented infos about webmaps used in the journal
@@ -505,6 +562,34 @@ define(["./WebApplicationData",
 				});
 
 				return images;
+			};
+
+			this.getImageObjects = function() {
+				// Story Main Stage images
+				var images = $.map(this.getStorySections(), function(section){
+					return section.media && section.media.type == "image" && section.media.image ? section.media.image : null;
+				});
+
+				// Story actions images
+				$.each(this.getStorySections(), function(i, section){
+					if ( section.contentActions ) {
+						$.each(section.contentActions, function(j, action){
+							if ( action.type == "media" && action.media.image )
+								images.push(action.media.image);
+						});
+					}
+				});
+
+				// Make the array unique
+				images = $.grep(images, function(image) {
+					var found = _.some(images, function(img) {
+						return image.url === img.url && image.altText === img.altText;
+					});
+					return found;
+				});
+
+				return images;
+
 			};
 
 			this.getAllImageUrls = function() {

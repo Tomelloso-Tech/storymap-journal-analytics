@@ -1,7 +1,25 @@
 define({
   "viewer": {
     "common": {
-      "close": "Schließen"
+      "close": "Schließen",
+      "focusMainstage": "Tastaturfokus an Medien senden",
+      "expandImage": "Bild einblenden"
+    },
+    "a11y": {
+      "skipToContent": "Mit \"Zusammenfassung\" fortfahren",
+      "headerAria": "Kopfzeile der Story",
+      "panelAria": "Zusammenfassung der Story",
+      "mainStageAria": "Medien des aktuellen Story-Abschnitts",
+      "logoLinkAria": "Logolink",
+      "toTop": "Zum Anfang der Zusammenfassung wechseln",
+      "focusContent": "Zu \"Zusammenfassung\" zurückkehren",
+      "navAria": "Story-Abschnitte",
+      "navPreviousAria": "Vorheriger Abschnitt",
+      "navNextAria": "Nächster Abschnitt",
+      "toSectionAria": "Zum Abschnitt %SECTION_NUMBER%: %SECTION_TITLE% wechseln",
+      "toNextGroupAria": "Nächste Abschnittsgruppe (%SECTION_RANGE%)",
+      "toPrevGroupAria": "Vorherige Abschnittsgruppe (%SECTION_RANGE%)",
+      "loadingAria": "Story-Inhalt wird geladen"
     },
     "loading": {
       "step1": "Story wird geladen",
@@ -63,7 +81,7 @@ define({
       "errorNotPublished": "Dieser Link ist nicht aktiv (Abschnitt wurde nicht veröffentlicht)"
     },
     "headerFromCommon": {
-      "storymapsText": "Eine Story Map",
+      "storymapsText": "Eine Story-Map",
       "builderButton": "Bearbeiten",
       "facebookTooltip": "Auf Facebook freigeben",
       "twitterTooltip": "Auf Twitter freigeben",
@@ -77,11 +95,10 @@ define({
       "tooltipAutoplayDisabled": "Dies ist im Modus für automatische Wiedergabe nicht verfügbar",
       "notshared": "Story wurde nicht freigegeben"
     },
-    "overviewFromCommon": {
-      "title": "Übersichtskarte"
-    },
-    "legendFromCommon": {
-      "title": "Legende"
+    "mapFromCommon": {
+      "overview": "Übersichtskarte",
+      "legend": "Legende",
+      "home": "Auf Standardausdehnung zoomen"
     },
     "shareFromCommon": {
       "copy": "Kopieren",
@@ -95,15 +112,24 @@ define({
       "autoplayExplain2": "Ist dieser Modus aktiviert, stehen Steuerelemente für Wiedergabe/Pause der Story und zum Einstellen der Navigationsgeschwindigkeit zur Verfügung.",
       "linksupdated": "Links aktualisiert!",
       "print": "Drucken",
-      "printInstruction1": "Warten Sie, bis der gesamte Inhalt geladen wurde, bevor Sie diese Seite drucken.",
-      "printInstruction1a": "Einige Inhalte werden möglicherweise nicht gedruckt, es sei denn, Sie aktivieren die Option \"Hintergrundfarben und -bilder drucken\" im Setup-Dialogfeld \"Seite drucken\".",
+      "printInstruction1": "Warten Sie mit dem Druck, bis die gesamte Story geladen wurde",
+      "printInstruction1a": "Wird diese Seite langsam geladen oder werden einige Medien nicht angezeigt, drucken Sie ggf. einen kleineren Bereich.",
+      "printInstruction1b": "Für optimale Ergebnisse müssen Sie ggf. in den Druckeinstellungen Ihres Browsers das Drucken von Hintergrundelementen aktivieren.",
       "printInstruction2": "Diese Seite kann nicht für andere freigegeben werden; geben Sie stattdessen ${link} frei.",
       "link": "Link zur Story",
+      "optionsHeader": "Optionen",
       "printOptPageBreak": "Jeden Abschnitt auf einer neuen Seite beginnen",
       "makeTextBlack": "Gesamten Text schwarz darstellen",
-      "printWarning": "Dies ist eine gedruckte Version einer Story Map. Dynamische Inhalte wie Videos und interaktive Karten sind nur in der Online-Version unter ${link} verfügbar.",
+      "showLinks": "Link-URLs anzeigen",
+      "madeWith": "Diese Story wurde mit ${JOURNAL_LINK_TEXT} erstellt.",
+      "journalLinkText": "Story Map Journal von Esri",
+      "readItOnline": "Lesen Sie die interaktive Version im Internet unter ${link}.",
       "printMSWarning": "Link ist nur in Online-Story verfügbar",
-      "printVideoWarning": "Dieses Video kann in der Online-Version dieser Story Map angezeigt werden."
+      "printVideoWarning": "Dieses Video kann in der Online-Version dieser Story Map angezeigt werden.",
+      "printRangeHeader": "Einen Teil der Story drucken",
+      "sectionLabel": "Abschnitte:",
+      "apply": "Übernehmen",
+      "resetRange": "Auf gesamte Story zurücksetzen"
     }
   }
 });

@@ -83,6 +83,7 @@ define({
     "webpageSelectorHome": {
       "lblUrl": "Liên kết trang web",
       "lblEmbed": "Mã nhúng",
+      "lblMustUseHTTPS": "Liên kết tới nội dung web phải bắt đầu bằng HTTPS",
       "lblOR": "HOẶC",
       "lblError1": "Lỗi, xóa một trong hai trường nhập.",
       "lblError2": "Mã nhúng chỉ có thể chứa một %IFRAMETAG%",
@@ -91,7 +92,9 @@ define({
     "mediaConfigure": {
       "lblURL": "Liên kết hình ảnh",
       "lblURLPH": "Liên kết phải kết thúc bằng .jpg, .png, .gif, hoặc .bmp",
+      "lblURLPHHTTPS": "https://www.example.com/image.jpg",
       "lblURLError": "Hình ảnh này dường như không hợp lệ. Vui lòng chỉ định một liên kết trực tiếp đến tệp hình ảnh (URL của bạn thường sẽ kết thúc bằng .jpg hoặc .png). Các liên kết đến trang web chứa một hình ảnh sẽ không hoạt động.",
+      "lblURLErrorHTTPS": "Liên kết hình ảnh này không hợp lệ. URL phải bắt đầu bằng HTTPS và kết thúc bằng một định dạng hình ảnh được hỗ trợ (.jpg, .png, .gif, .bmp).",
       "lblURLCheck": "Đang kiểm tra hình ảnh...",
       "lblLabel": "Chú thích hình ảnh",
       "lblLabel1": "Chú thích",
@@ -106,7 +109,7 @@ define({
       "lblPosition3": "Đặt vừa",
       "lblPosition4": "Kéo giãn",
       "lblPosition5": "Tùy chỉnh",
-      "lblURLHelp": "Để có kết quả tốt nhất, kích thước hình ảnh phải nhỏ hơn 400 KB. Sử dụng ảnh JPG được nén lại ở mức 80% và chiều rộng khuyến nghị là: 2000 pixel cho giao diện chính hoặc bảng thuyết minh (narrative panel) có nút phóng đại, 1000 pixel cho bảng thuyết minh không có nút phóng đại. <br><br>Nếu ảnh được liên kết vẽ chậm, hãy tải ảnh lên câu chuyện của bạn để xử lý tốt hơn.",
+      "lblURLHelp": "Liên kết hình ảnh phải bắt đầu bằng HTTPS.<br><br>Để có kết quả tốt nhất, kích thước hình ảnh phải nhỏ hơn 400 KB. Sử dụng ảnh JPG được nén lại ở mức 80% chất lượng và chiều rộng hình ảnh khuyến nghị là: 2000 pixel cho giao diện chính hoặc bảng thuyết minh (narrative panel) có nút phóng đại, 1000 pixel cho bảng thuyết minh không có nút phóng đại.<br><br>Nếu liên kết hình ảnh hiển thị chậm, hãy tải ảnh lên câu chuyện của bạn để được xử lý tốt hơn.",
       "tooltipDimension": "Giá trị có thể được chỉ định theo 'px' hoặc '%'",
       "tooltipDimension2": "Giá trị phải được chỉ định bằng 'px'",
       "lblPosition2Explain": "(có thể xén)",
@@ -116,15 +119,19 @@ define({
       "unloadLbl": "Không tải khi người đọc điều hướng ra ngoài",
       "unloadHelp": "Nếu trang web có âm thanh hoặc video, tiếp tục chọn tùy chọn này để dừng phát nội dung đó khi người đọc điều hướng ra ngoài. Ví dụ: bỏ chọn để tiếp tục phát âm thanh khi trình đọc chuyển qua câu chuyện.<br />Nếu trang web là một ứng dụng, bỏ chọn tùy chọn này để câu chuyện không tải lại nếu người đọc quay trở lại.",
       "embedProtocolLabel": "Tải trang qua kết nối bảo mật (HTTPS)",
-      "embedProtocolWarning1": "Nếu trang này không tải bên trong câu chuyện của bạn, bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang web trong một tab trình duyệt mới. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Tìm hiểu thêm</a>",
-      "embedProtocolWarning2": "Nếu trang này không tải trong câu chuyện của bạn, hãy bỏ chọn tùy chọn này và thử lại. Nếu trang vẫn không tải, thì bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang web ở một tab trình duyệt mới. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Tìm hiểu thêm</a>"
+      "embedProtocolWarning1": "Nếu trang này không tải ra trong câu chuyện của bạn, bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang trong một tab trình duyệt mới.",
+      "embedProtocolWarning2": "Nếu trang này không tải ra trong câu chuyện của bạn, hãy bỏ chọn tùy chọn này và thử lại. Nếu trang vẫn không tải, thì bạn không thể nhúng nó vì lý do bảo mật web. Thay vào đó, hãy thêm một liên kết trong câu chuyện của bạn để mở trang trong một tab trình duyệt mới.",
+      "learn": "Tìm hiểu thêm",
+      "lblAltText": "Văn bản Thay thế",
+      "placeholderAltText": "Nhập mô tả phương tiện này cho các độc giả khiếm thị...",
+      "tooltipAltText": "Cung cấp mô tả về nội dung của phương tiện này để các công nghệ trợ giúp, ví dụ như phần mềm đọc màn hình, sử dụng. Mô tả này là tùy chọn, nhưng chúng tôi khuyến nghị nhập mô tả để đáp ứng hướng dẫn về khả năng truy cập web, như WCAG và Phần 508."
     },
     "editorActionGeocode": {
       "lblTitle": "Định vị một địa chỉ hoặc địa điểm",
       "mapMarkerExplain": "Người dùng sẽ thấy một điểm đánh dấu trên bản đồ khi bấm vào liên kết"
     },
     "editorActions": {
-      "navigate": "Điều hướng đến một phần",
+      "navigate": "Điều hướng đến phần khác",
       "remove": "Xóa tương tác",
       "preview": "Xem trước tương tác"
     },

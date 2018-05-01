@@ -84,6 +84,7 @@ define({
 			webpageSelectorHome: {
 				lblUrl: "Web page link",
 				lblEmbed: "Embed code",
+				lblMustUseHTTPS: "Links to web content must begin with HTTPS",
 				lblOR: "OR",
 				lblError1: "Error, clear one of the two input fields.",
 				lblError2: "Embed code can only contain one %IFRAMETAG%",
@@ -92,7 +93,9 @@ define({
 			mediaConfigure: {
 				lblURL: "Image link",
 				lblURLPH: "Link should end with .jpg, .png, .gif, or .bmp",
+				lblURLPHHTTPS: "https://www.example.com/image.jpg",
 				lblURLError: "This image does not seem to be valid. Please specify a direct link to an image file (your URL will usually end with .jpg or .png). Links to a web page that contains an image won't work.",
+				lblURLErrorHTTPS: "This image link is not valid. The URL must begin with HTTPS and end with a supported image file extension (.jpg, .png, .gif, .bmp).",
 				lblURLCheck: "Checking image...",
 				lblLabel: "Image caption",
 				lblLabel1: "Caption",
@@ -107,7 +110,7 @@ define({
 				lblPosition3: "Fit",
 				lblPosition4: "Stretch",
 				lblPosition5: "Custom",
-				lblURLHelp: "For best results, images should be less than 400 KB. Use compressed JPG images at 80% quality and these recommended image widths: 2000 pixels for main stage or narrative panel with maximize button, 1000 pixels for narrative panel without maximize button.<br><br>If a linked image draws slowly, upload it to your story for better results.",
+				lblURLHelp: "Image link must begin with HTTPS.<br><br>For best results, images should be less than 400 KB. Use compressed JPG images at 80% quality and these recommended image widths: 2000 pixels for main stage or narrative panel with maximize button, 1000 pixels for narrative panel without maximize button.<br><br>If a linked image draws slowly, upload it to your story for better results.",
 				tooltipDimension: "The value can be specified in 'px' or '%'",
 				tooltipDimension2: "The value has to be specified in 'px'",
 				lblPosition2Explain: "(may crop)",
@@ -117,15 +120,19 @@ define({
 				unloadLbl: "Unload when reader navigates away",
 				unloadHelp: "If the web page has audio or video media, keep this option checked to stop that content from playing when the reader navigates away. Uncheck it for example to keep a soundtrack playing as the reader advances through the story.<br />If the web page is an application, uncheck this option so that the story does not reload if the reader returns to it.",
 				embedProtocolLabel: "Load page over a secure connection (HTTPS)",
-				embedProtocolWarning1: "If this page does not load in your story, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Learn more</a>",
-				embedProtocolWarning2: "If this page does not load in your story, uncheck this option and try again. If the page still does not load, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab. <a href='http://links.esri.com/storymaps/blogs_mixed_content/' target='_blank'>Learn more</a>"
+				embedProtocolWarning1: "If this page does not load in your story, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab.",
+				embedProtocolWarning2: "If this page does not load in your story, uncheck this option and try again. If the page still does not load, it can't be embedded for web security reasons. As an alternative, add a link in your narrative to open the page in a new browser tab.",
+				learn: "Learn more",
+				lblAltText: "Alternative Text",
+				placeholderAltText: "Enter a description of this media for visually impaired readers...",
+				tooltipAltText: "Provide a description of this media content that will be used by assistive technologies such as screen reader software. A description is optional but recommended to meet web accessibility guidelines such as WCAG and Section 508."
 			},
 			editorActionGeocode: {
 				lblTitle: "Locate an address or place",
 				mapMarkerExplain: "User will see a map marker when clicking the link"
 			},
 			editorActions: {
-				navigate: "Navigate to a section",
+				navigate: "Navigate to another section",
 				remove: "Remove action",
 				preview: "Preview action"
 			},
@@ -163,6 +170,7 @@ define({
 	"pt-pt": 1,
 	"ro": 1,
 	"ru": 1,
+	"sl": 1,
 	"sr": 1,
 	"sv": 1,
 	"th": 1,

@@ -188,7 +188,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 					// Get the portal instance name
 					var instance = location.pathname.substr(0,appLocation);
 
-					app.indexCfg.sharingurl = "//" + location.host + instance + "/sharing/content/items";
+					app.indexCfg.sharingurl = "//" + location.host + instance + "/sharing/rest/content/items";
 					app.indexCfg.proxyurl =  "//" + location.host + instance +  "/sharing/proxy";
 				}
 				else
@@ -259,6 +259,12 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 				app.isPortal = !! response.isPortal;
 
 				definePortalConfig();
+
+				// Pass cookie onto API to avoid infinite redirects
+				// use .portalUrl instead of just .url -- otherwise Portal federated services
+				// look in the wrong place for generateToken. Check esri.id.serverInfos if
+				// you run into this problem.
+				IdentityManager.checkSignInStatus(app.portal.portalUrl);
 
 				// If app is configured to use OAuth
 				if ( app.indexCfg.oAuthAppId ) {
@@ -382,19 +388,19 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 
 					app.userCanEdit = app.data.userIsAppOwner();
 
-					// Prevent app from accessing the cookie in viewer when user is not the owner
-					if ( ! app.isInBuilder && ! app.userCanEdit ) {
-						if( ! document.__defineGetter__ ) {
-							Object.defineProperty(document, 'cookie', {
-								get: function(){ return ''; },
-								set: function(){ return true; }
-							});
-						}
-						else {
-							document.__defineGetter__("cookie", function() { return ''; });
-							document.__defineSetter__("cookie", function() {} );
-						}
-					}
+					//Prevent app from accessing the cookie in viewer when user is not the owner
+					//if ( ! app.isInBuilder && ! app.userCanEdit ) {
+					//	if( ! document.__defineGetter__ ) {
+					//		Object.defineProperty(document, 'cookie', {
+					//			get: function(){ return ''; },
+					//			set: function(){ return true; }
+					//		});
+					//	}
+					//	else {
+					//		document.__defineGetter__("cookie", function() { return ''; });
+					//		document.__defineSetter__("cookie", function() {} );
+					//	}
+					//}
 
 					if( app.indexCfg.authorizedOwners && app.indexCfg.authorizedOwners.length > 0 && app.indexCfg.authorizedOwners[0] ) {
 						var owner = itemRq.owner,
@@ -592,7 +598,10 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			app.builder && app.builder.appInitComplete();
 
 			// Load My Stories in builder or viewer if user is owning the story
-			if ( (app.isInBuilder || app.userCanEdit) && has("ie") != 9 && ! _urlParams.preview ) {
+
+			var isPreview = (_urlParams.preview === 'true' || _urlParams.preview === '');
+			var isAutoplay = (_urlParams.autoplay === 'true' || _urlParams.autoplay === '');
+			if ( (app.isInBuilder || app.userCanEdit) && has("ie") != 9 && !isPreview && !isAutoplay ) {
 				if ( has("ff") ) {
 					$(".builderShare #my-stories-frame").remove();
 				}
@@ -833,6 +842,7 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			return ! app.isInBuilder && (
 				(! isProd() && !! CommonHelper.getAppID(isProd()))
 				|| isProd() && app.userCanEdit)
+				&& (_urlParams.autoplay === undefined || _urlParams.autoplay == 'false')
 				&& (_urlParams.preview === undefined || _urlParams.preview == 'false');
 		}
 
@@ -953,6 +963,12 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 		{
 			document.documentElement.lang = kernel.locale;
 			query('#fatalError .error-title')[0].innerHTML = i18n.viewer.errors.boxTitle;
+			$('.skip-to-content').html(i18n.viewer.a11y.skipToContent);
+			$('.header[role="banner"]').attr('aria-label', i18n.viewer.a11y.headerAria);
+			$('.sections[role="main"]').attr('aria-label', i18n.viewer.a11y.panelAria);
+			$('.loop-to-top').html(i18n.viewer.a11y.toTop);
+			$('.loadingGif').attr('alt', i18n.viewer.a11y.loadingAria);
+			$('.mainStagePanel').attr('aria-label', i18n.viewer.a11y.mainStageAria);
 		}
 
 		function isProd()
