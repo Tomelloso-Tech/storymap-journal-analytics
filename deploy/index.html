@@ -17,13 +17,13 @@
 			 - edit the following four tags as well as the title tag above on line 4
 			 - see https://developerscorner.storymaps.arcgis.com/grow-your-story-maps-audience-with-open-graph-tags-b7639cb65d5c
 		-->
-		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
+		<meta name="description" content="Únete a otras personas inquietas y apasionadas por la tecnología y el emprendimiento en la provincia de Ciudad Real para compartir conocimiento y divulgar buenas prácticas.">
 
 		<!-- Social sharing -->
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="Tomelloso Tech - Nuevas tecnologías y emprendimiento"/>
-		<meta property="og:description" content="Únete a nuestra comunidad de profesionales en la provincia de Ciudad Real."/>
-		<meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
+		<meta property="og:description" content="Únete a otras personas inquietas y apasionadas por la tecnología y el emprendimiento en la provincia de Ciudad Real para compartir conocimiento y divulgar buenas prácticas."/>
+		<meta property="og:image" content="https://tomelloso-tech.github.io//resources/common/icons/tomellosotech-ogimage.png"/>
 
 		<!--
 			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
@@ -38,10 +38,10 @@
 
             var configOptions = {
 				// Enter an application ID created through the Map Journal builder
-				appid: "0f4839dc4c7942ed91bd2dd91542184f",
+				appid: "1bcb525da55045af906ab1612a2edcd7",
 				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
-				oAuthAppId: "5ELG8LDjB7j7TPUr",
+				oAuthAppId: "R3wkkvmkv5hNz5Ct",
 				// Optionally, to use the appid URL parameter, configure authorizedOwners to reference
 				//    members whose stories can be viewed by this storytelling app.
 				// To authorize stories owned by...
@@ -114,12 +114,38 @@
             .navDots .dot{
                     color: #ccc !important;
             }
+            .floatingSwiper .header{
+                width: 100%;
+            }
+            .linkSocialContainer .linkContainer{
+                width: 100% !important;
+            }
+            .floatingSwiper.expanded .expanded-close{
+                font-size: 1.2rem;
+            }
+            [data-src="https://docs.google.com/document/d/e/2PACX-1vSN2iXZ_inyvJ-FeD3W-9j7Zk-ROURZAey71p8MhRbAi_Z5gz9Z0dJLl5CU9eQKr_OjIm1a-9Yj3PS-/pub?embedded=false"]{
+                max-width: 100%;
+                padding: 2rem;
+            }
+            .mediaBackContainer{
+                zoom: .7;
+            }
+            .mobileView .embedContainer{
+                padding: 2rem;
+            }
+            .sectionPanel .section:first-child .title,
+            .sectionPanel .appTitle.anchored{
+                display: none;
+            }
+            .embedContainer.stretch{
+                background-color: white;
+            }
 
             .cssload-thecube {
             	width: 73px;
             	height: 73px;
-            	margin: 0 auto;
-            	margin-top: 49px;
+            	margin-left: -36px;
+            	margin-top: -36px;
             	position: relative;
             	transform: rotateZ(45deg);
             		-o-transform: rotateZ(45deg);
@@ -522,14 +548,14 @@
 
 			#loadingIndicator {
 				position: fixed;
-				top: 35%;
+				top: 50%;
 				left: 50%;
 				z-index: 1101;
+                width: 100%;
 			}
 
 			.loadingIndicator {
-				margin-left: -17px;
-				margin-top: -20px;
+
 			}
 		</style>
 
